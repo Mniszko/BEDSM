@@ -3,7 +3,7 @@ eigen
 .vscode
 g-plot
 *.out
-*.md
+notatki spotkaniowe.md
 output.txt
 temp.txt
 testy
