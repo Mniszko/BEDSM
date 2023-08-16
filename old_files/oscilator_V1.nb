@@ -1,0 +1,3162 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    122857,       3154]
+NotebookOptionsPosition[    121215,       3118]
+NotebookOutlinePosition[    121654,       3135]
+CellTagsIndexPosition[    121611,       3132]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"dla", " ", "jednej", " ", 
+    RowBox[{"cz\:0105stki", ":"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", "\t", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"k", "^", "2"}], " ", "-", " ", 
+     RowBox[{"energia", " ", "radialno"}], " ", "-", " ", "k\:0105towa"}], 
+    ",", " ", 
+    RowBox[{
+     RowBox[{
+      TemplateBox[<|"boxes" -> FormBox[
+          RowBox[{
+            SuperscriptBox[
+             StyleBox["k", "TI"], "2"], "\[LongEqual]", 
+            StyleBox["E", "TI"], "-", "4", 
+            SuperscriptBox["\[Pi]", "2"], 
+            SuperscriptBox[
+             StyleBox["n", "TI"], "2"], "/", 
+            SuperscriptBox[
+             StyleBox["L", "TI"], "2"]}], TraditionalForm], "errors" -> {}, 
+        "input" -> "k^2 = E-4 \\pi^2 n^2 /L^2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "\[IndentingNewLine]", "\t", 
+      TemplateBox[<|
+       "boxes" -> FormBox["\[Lambda]", TraditionalForm], "errors" -> {}, 
+        "input" -> "\\lambda", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], " ", "-", " ", 
+     RowBox[{"masa", " ", 
+      TemplateBox[<|
+       "boxes" -> FormBox["\[Cross]", TraditionalForm], "errors" -> {}, 
+        "input" -> "\\times", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|
+        "boxes" -> FormBox["\[Omega]", TraditionalForm], "errors" -> {}, 
+         "input" -> "\\omega", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "^", "2"}]}]}]}], "  ", 
+   "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"a", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Abs", "[", "m", "]"}], "+", "1", "-", 
+        RowBox[{
+         RowBox[{"k", "^", "2"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"4", " ", 
+           
+           TemplateBox[<|
+            "boxes" -> FormBox["\[Lambda]", TraditionalForm], "errors" -> {}, 
+             "input" -> "\\lambda", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"]}], ")"}]}]}], ")"}], "/", "2"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"b", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Abs", "[", "m", "]"}], "+", "1"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Psi]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\psi", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{"I", " ", "2", " ", "Pi", " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            StyleBox["n", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+          "n", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        RowBox[{
+         TemplateBox[<|"boxes" -> FormBox[
+             StyleBox["z", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+           "z", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"I", " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            StyleBox["m", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+          "m", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        TemplateBox[<|
+         "boxes" -> FormBox["\[CurlyPhi]", TraditionalForm], "errors" -> {}, 
+          "input" -> "\\varphi", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "]"}], " ", 
+      RowBox[{
+       TemplateBox[<|
+        "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, 
+         "input" -> "\\rho", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "^", 
+       RowBox[{"Abs", "[", 
+        TemplateBox[<|"boxes" -> FormBox[
+            StyleBox["m", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+          "m", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "]"}]}], " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         TemplateBox[<|
+          "boxes" -> FormBox["\[Lambda]", TraditionalForm], "errors" -> {}, 
+           "input" -> "\\lambda", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], " ", 
+        RowBox[{
+         RowBox[{
+          
+          TemplateBox[<|
+           "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, 
+            "input" -> "\\rho", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+      RowBox[{"Hypergeometric1F1", "[", 
+       RowBox[{"a", ",", "b", ",", 
+        RowBox[{
+         TemplateBox[<|
+          "boxes" -> FormBox["\[Lambda]", TraditionalForm], "errors" -> {}, 
+           "input" -> "\\lambda", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], " ", 
+         RowBox[{
+          
+          TemplateBox[<|
+           "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, 
+            "input" -> "\\rho", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SuperscriptBox["\[Psi]", "*"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\psi^*", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "=", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "I"}], " ", "2", " ", "Pi", " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            StyleBox["n", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+          "n", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        RowBox[{
+         TemplateBox[<|"boxes" -> FormBox[
+             StyleBox["z", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+           "z", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "I"}], " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            StyleBox["m", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+          "m", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        TemplateBox[<|
+         "boxes" -> FormBox["\[CurlyPhi]", TraditionalForm], "errors" -> {}, 
+          "input" -> "\\varphi", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "]"}], " ", 
+      RowBox[{
+       TemplateBox[<|
+        "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, 
+         "input" -> "\\rho", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "^", 
+       RowBox[{"Abs", "[", 
+        TemplateBox[<|"boxes" -> FormBox[
+            StyleBox["m", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+          "m", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "]"}]}], " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         TemplateBox[<|
+          "boxes" -> FormBox["\[Lambda]", TraditionalForm], "errors" -> {}, 
+           "input" -> "\\lambda", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], " ", 
+        RowBox[{
+         RowBox[{
+          
+          TemplateBox[<|
+           "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, 
+            "input" -> "\\rho", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+      RowBox[{"Conjugate", "[", 
+       RowBox[{"Hypergeometric1F1", "[", 
+        RowBox[{"a", ",", "b", ",", 
+         RowBox[{
+          
+          TemplateBox[<|
+           "boxes" -> FormBox["\[Lambda]", TraditionalForm], "errors" -> {}, 
+            "input" -> "\\lambda", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], " ", 
+          RowBox[{
+           
+           TemplateBox[<|
+            "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, 
+             "input" -> "\\rho", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"laplacedPsi", " ", "=", 
+     RowBox[{"FullSimplify", "[", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SuperscriptBox["\[Psi]", "*"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\psi^*", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "  ", 
+       RowBox[{"Laplacian", "[", 
+        RowBox[{
+         TemplateBox[<|
+          "boxes" -> FormBox["\[Psi]", TraditionalForm], "errors" -> {}, 
+           "input" -> "\\psi", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           
+           TemplateBox[<|
+            "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, 
+             "input" -> "\\rho", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"], ",", 
+           
+           TemplateBox[<|
+            "boxes" -> FormBox["\[CurlyPhi]", TraditionalForm], 
+             "errors" -> {}, "input" -> "\\varphi", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"], ",", 
+           TemplateBox[<|"boxes" -> FormBox[
+               StyleBox["z", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+             "z", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"]}], "}"}], ",", "\"\<Cylindrical\>\""}], 
+        "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"TraditionalForm", "[", "laplacedPsi", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.89797247555794*^9, 3.897972476806993*^9}, 
+   3.897972812208005*^9, {3.897972941117011*^9, 3.8979729413170223`*^9}, {
+   3.897977356166428*^9, 3.8979777323728733`*^9}, {3.897977836770735*^9, 
+   3.8979778465921593`*^9}, {3.897977877552889*^9, 3.897977897429641*^9}, {
+   3.897978015459886*^9, 3.897978063486148*^9}, {3.897978137103548*^9, 
+   3.897978253005672*^9}, {3.897978290817308*^9, 3.8979783496568823`*^9}, {
+   3.897978423015626*^9, 3.897978473227141*^9}, {3.898067367672241*^9, 
+   3.898067371982788*^9}, {3.898067570765292*^9, 3.898067575861812*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"b4a63eb6-c61e-4223-b958-dcbe90fdaefb"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["L", "2"]}]]}], 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "\[Lambda]"}], " ", 
+     SuperscriptBox["\[Rho]", "2"]}]], " ", 
+   SuperscriptBox["\[Rho]", 
+    RowBox[{
+     RowBox[{"2", " ", 
+      TemplateBox[{"m"},
+       "Abs"]}], "-", "2"}]], " ", 
+   SuperscriptBox[
+    TemplateBox[{
+      RowBox[{
+        TemplateBox[{"m"}, "Abs"], "+", "1"}]},
+     "Gamma"], "2"], " ", 
+   TemplateBox[{
+     RowBox[{
+       FractionBox["1", "8"], " ", 
+       RowBox[{"(", 
+         RowBox[{
+           RowBox[{"-", 
+             FractionBox[
+              SuperscriptBox["k", "2"], "\[Lambda]"]}], "+", 
+           RowBox[{"4", " ", 
+             TemplateBox[{"m"}, "Abs"]}], "+", "4"}], ")"}]}], 
+     RowBox[{
+       TemplateBox[{"m"}, "Abs"], "+", "1"}], 
+     RowBox[{"\[Lambda]", " ", 
+       SuperscriptBox["\[Rho]", "2"]}]},
+    "Hypergeometric1F1Regularized"], " ", 
+   TemplateBox[{
+     TemplateBox[{
+       RowBox[{
+         FractionBox["1", "2"], " ", 
+         RowBox[{"(", 
+           RowBox[{
+             RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox["k", "2"], 
+                RowBox[{"4", " ", "\[Lambda]"}]]}], "+", 
+             TemplateBox[{"m"}, "Abs"], "+", "1"}], ")"}]}], 
+       RowBox[{
+         TemplateBox[{"m"}, "Abs"], "+", "1"}], 
+       RowBox[{"\[Lambda]", " ", 
+         SuperscriptBox["\[Rho]", "2"]}]}, "Hypergeometric1F1Regularized"]},
+    "Conjugate"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["L", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["\[Lambda]", "2"], " ", 
+          SuperscriptBox["\[Rho]", "4"]}]}], "+", 
+        RowBox[{
+         SuperscriptBox["k", "2"], " ", 
+         SuperscriptBox["\[Rho]", "2"]}], "+", 
+        RowBox[{"4", " ", 
+         SuperscriptBox["m", "2"]}]}], ")"}]}], "-", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["L", "2"], " ", "m", " ", 
+      RowBox[{"Re", "(", "m", ")"}]}], "+", 
+     RowBox[{"8", " ", 
+      SuperscriptBox["\[Pi]", "2"], " ", 
+      SuperscriptBox["n", "2"], " ", 
+      SuperscriptBox["\[Rho]", "2"]}]}], ")"}]}], TraditionalForm]], "Output",\
+
+ CellChangeTimes->{{3.897978455009606*^9, 3.897978475404778*^9}, 
+   3.8979845743070583`*^9, 3.89806741844003*^9, 3.8980675770877733`*^9, 
+   3.8980677279738903`*^9},
+ CellLabel->
+  "Out[38]//TraditionalForm=",ExpressionUUID->"d91ad760-8996-42dd-9681-\
+b0002cd9d8ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"integratedLaplacedPsi", " ", "=", " ", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{"laplacedPsi", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        TemplateBox[<|
+         "boxes" -> FormBox["\[CurlyPhi]", TraditionalForm], "errors" -> {}, 
+          "input" -> "\\varphi", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], ",", "0", ",", 
+        RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            StyleBox["z", "TI"], TraditionalForm], "errors" -> {}, "input" -> 
+          "z", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], ",", "0", ",", "L"}], "}"}]}], "]"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", "integratedLaplacedPsi", "]"}]}], "Input",
+ CellChangeTimes->{{3.897979761187894*^9, 3.897979843451889*^9}, 
+   3.898067768552998*^9},
+ CellLabel->"In[41]:=",ExpressionUUID->"8e02ba0c-3871-430a-b3b0-08ac8f3c1754"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", "L"]}], "\[Pi]", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "\[Lambda]"}], " ", 
+     SuperscriptBox["\[Rho]", "2"]}]], " ", 
+   SuperscriptBox["\[Rho]", 
+    RowBox[{
+     RowBox[{"2", " ", 
+      TemplateBox[{"m"},
+       "Abs"]}], "-", "2"}]], " ", 
+   SuperscriptBox[
+    TemplateBox[{
+      RowBox[{
+        TemplateBox[{"m"}, "Abs"], "+", "1"}]},
+     "Gamma"], "2"], " ", 
+   TemplateBox[{
+     RowBox[{
+       FractionBox["1", "8"], " ", 
+       RowBox[{"(", 
+         RowBox[{
+           RowBox[{"-", 
+             FractionBox[
+              SuperscriptBox["k", "2"], "\[Lambda]"]}], "+", 
+           RowBox[{"4", " ", 
+             TemplateBox[{"m"}, "Abs"]}], "+", "4"}], ")"}]}], 
+     RowBox[{
+       TemplateBox[{"m"}, "Abs"], "+", "1"}], 
+     RowBox[{"\[Lambda]", " ", 
+       SuperscriptBox["\[Rho]", "2"]}]},
+    "Hypergeometric1F1Regularized"], " ", 
+   TemplateBox[{
+     TemplateBox[{
+       RowBox[{
+         FractionBox["1", "2"], " ", 
+         RowBox[{"(", 
+           RowBox[{
+             RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox["k", "2"], 
+                RowBox[{"4", " ", "\[Lambda]"}]]}], "+", 
+             TemplateBox[{"m"}, "Abs"], "+", "1"}], ")"}]}], 
+       RowBox[{
+         TemplateBox[{"m"}, "Abs"], "+", "1"}], 
+       RowBox[{"\[Lambda]", " ", 
+         SuperscriptBox["\[Rho]", "2"]}]}, "Hypergeometric1F1Regularized"]},
+    "Conjugate"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["L", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["\[Lambda]", "2"], " ", 
+          SuperscriptBox["\[Rho]", "4"]}]}], "+", 
+        RowBox[{
+         SuperscriptBox["k", "2"], " ", 
+         SuperscriptBox["\[Rho]", "2"]}], "+", 
+        RowBox[{"4", " ", 
+         SuperscriptBox["m", "2"]}]}], ")"}]}], "-", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["L", "2"], " ", "m", " ", 
+      RowBox[{"Re", "(", "m", ")"}]}], "+", 
+     RowBox[{"8", " ", 
+      SuperscriptBox["\[Pi]", "2"], " ", 
+      SuperscriptBox["n", "2"], " ", 
+      SuperscriptBox["\[Rho]", "2"]}]}], ")"}]}], TraditionalForm]], "Output",\
+
+ CellChangeTimes->{
+  3.89797985225913*^9, 3.897979892111432*^9, 3.897980214270069*^9, {
+   3.898067765960923*^9, 3.89806777102184*^9}},
+ CellLabel->
+  "Out[42]//TraditionalForm=",ExpressionUUID->"e454bbd1-2c36-4663-9cb3-\
+58f5eaeb908b"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Jest du\:017cy problem z ca\[LSlash]kowaniem przez ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|
+    "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+     "\\rho", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "32188a5f-073e-4905-9618-ee66efb832a7"],
+ ", po to jest numeryka"
+}], "Text",
+ CellChangeTimes->{{3.897980249757744*^9, 
+  3.8979803066073503`*^9}},ExpressionUUID->"90924b98-e0e3-438f-a120-\
+b645cc637fe7"],
+
+Cell[CellGroupData[{
+
+Cell["Dwa bozony", "Section",
+ CellChangeTimes->{{3.89798031720933*^9, 
+  3.8979803466210546`*^9}},ExpressionUUID->"181c2f20-acab-4e2d-b8b7-\
+22b3aa7ff7b5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a1", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "m_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "]"}], "+", "1", "-", 
+      RowBox[{
+       RowBox[{"k", "^", "2"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"4", 
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {},
+            "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], ")"}]}]}], ")"}], "/", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b1", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox[
+          StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "m_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "]"}], "+", "1"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a2", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "m_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "]"}], "+", "1", "-", 
+      RowBox[{
+       RowBox[{"k", "^", "2"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"4", " ", 
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {},
+            "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], ")"}]}]}], ")"}], "/", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"b2", " ", "=", "  ", 
+    RowBox[{
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}], "+", "1"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "1"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\psi_1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", "2", " ", "Pi", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["n", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "n_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["z", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "z_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], "]"}], " ", 
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\rho", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", 
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{"a1", ",", "b1", ",", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], " ", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", "2", " ", "Pi", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["n", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "n_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["z", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "z_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], "]"}], " ", 
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\rho", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", 
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{"a1", ",", "b1", ",", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], " ", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Psi]", "1", "*"], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\psi^*_1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", "2", " ", "Pi", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["n", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "n_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["z", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "z_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], "]"}], " ", 
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\rho", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", 
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Conjugate", "[", 
+     RowBox[{"Hypergeometric1F1", "[", 
+      RowBox[{"a1", ",", "b1", ",", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        RowBox[{
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+           "input" -> "\\rho_1", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Psi]", "11", "*"], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\psi^*_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", "2", " ", "Pi", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["n", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "n_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["z", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "z_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], "]"}], " ", 
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\rho", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", 
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Conjugate", "[", 
+     RowBox[{"Hypergeometric1F1", "[", 
+      RowBox[{"a1", ",", "b1", ",", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Lambda]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\lambda_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        RowBox[{
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+           "input" -> "\\rho_2", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "2"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\psi_2", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", "2", " ", "Pi", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["n", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "n_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["z", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "z_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], "]"}], " ", 
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\rho", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", 
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{"a2", ",", "b2", ",", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], " ", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "22"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", "2", " ", "Pi", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["n", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "n_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["z", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "z_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], "]"}], " ", 
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\rho", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", 
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{"a2", ",", "b2", ",", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], " ", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Psi]", "2", "*"], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\psi^*_2", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", "2", " ", "Pi", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["n", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "n_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["z", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "z_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], "]"}], " ", 
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\rho", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", 
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Conjugate", "[", 
+     RowBox[{"Hypergeometric1F1", "[", 
+      RowBox[{"a2", ",", "b2", ",", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        RowBox[{
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+           "input" -> "\\rho_2", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Psi]", "22", "*"], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\psi^*_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", "2", " ", "Pi", " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["n", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "n_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            StyleBox["z", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "z_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "/", "L"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "I"}], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], " ", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"]}], "]"}], " ", 
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Rho]", TraditionalForm], "errors" -> {}, "input" -> 
+       "\\rho", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", 
+     RowBox[{"Abs", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox[
+           StyleBox["m", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "m_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Conjugate", "[", 
+     RowBox[{"Hypergeometric1F1", "[", 
+      RowBox[{"a2", ",", "b2", ",", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Lambda]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\lambda_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        RowBox[{
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+           "input" -> "\\rho_1", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], "^", "2"}]}]}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|
+    "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Psi", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Psi]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\psi_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Psi]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\psi_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "+", 
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Psi]", "22"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\psi_{22}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SuperscriptBox["\[CapitalPsi]", "*"], TraditionalForm], "errors" -> {},
+      "input" -> "\\Psi^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox["\[Psi]", "1", "*"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\psi^*_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox["\[Psi]", "2", "*"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\psi^*_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], " ", "+", " ", 
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox["\[Psi]", "11", "*"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\psi^*_{11}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox["\[Psi]", "22", "*"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\psi^*_{22}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}]}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.897982702976447*^9, 3.8979827039225073`*^9}, {
+   3.897982746717556*^9, 3.897982769104869*^9}, {3.89798284466791*^9, 
+   3.897982920126294*^9}, {3.897982956771377*^9, 3.8979829675176*^9}, {
+   3.8979830304594307`*^9, 3.8979830350996*^9}, {3.897983286820822*^9, 
+   3.89798333090956*^9}, {3.897983425016698*^9, 3.89798358589577*^9}, 
+   3.897983620100236*^9, {3.897983793111052*^9, 3.8979838143779383`*^9}, {
+   3.897984397545011*^9, 3.89798440055191*^9}, {3.898067387617112*^9, 
+   3.89806739732279*^9}, {3.8980676248414183`*^9, 3.898067651623798*^9}, {
+   3.898068076550722*^9, 3.898068083122569*^9}, {3.8980686115225143`*^9, 
+   3.898068760991063*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"2b2ea799-0089-4e62-8c78-9390e7b4905a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"laplacedPsi1", " ", "=", " ", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"Laplacian", "[", 
+     RowBox[{
+      TemplateBox[<|
+       "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+        "input" -> "\\Psi", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], ",", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], ",", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox[
+             StyleBox["z", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "z_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "}"}], ",", "\"\<Cylindrical\>\""}], 
+     "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", "laplacedPsi1", "]"}]}], "Input",
+ CellChangeTimes->{{3.897984487854926*^9, 3.897984522416646*^9}, {
+   3.898068823150405*^9, 3.8980688373897867`*^9}, {3.898068893185849*^9, 
+   3.8980688978923473`*^9}, {3.8980722515438013`*^9, 3.89807225624057*^9}, 
+   3.898073311574246*^9},
+ CellLabel->
+  "In[123]:=",ExpressionUUID->"b2ecdb70-653f-4927-bdde-5d7a33574ea8"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["1", "16"], " ", 
+   SuperscriptBox["\[Rho]", 
+    RowBox[{
+     TemplateBox[{
+       SubscriptBox["m", "1"]},
+      "Abs"], "+", 
+     TemplateBox[{
+       SubscriptBox["m", "2"]},
+      "Abs"]}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"64", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         FractionBox[
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"4", " ", "\[Pi]", " ", 
+              SubscriptBox["n", "1"], " ", 
+              SubscriptBox["z", "1"]}], "+", 
+             RowBox[{"4", " ", "\[Pi]", " ", 
+              SubscriptBox["n", "2"], " ", 
+              SubscriptBox["z", "2"]}], "+", 
+             RowBox[{"L", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"\[ImaginaryI]", " ", 
+                 SubscriptBox["\[Lambda]", "1"], " ", 
+                 SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+                RowBox[{"\[ImaginaryI]", " ", 
+                 SubscriptBox["\[Lambda]", "2"], " ", 
+                 SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+                RowBox[{"2", " ", 
+                 SubscriptBox["m", "1"], " ", 
+                 SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                RowBox[{"2", " ", 
+                 SubscriptBox["m", "2"], " ", 
+                 SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+          RowBox[{"2", " ", "L"}]]], " ", 
+        SuperscriptBox["\[Pi]", "2"], " ", 
+        TemplateBox[{
+          RowBox[{
+            FractionBox["1", "2"], " ", 
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{"-", 
+                  FractionBox[
+                   SuperscriptBox["k", "2"], 
+                   RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                TemplateBox[{
+                  SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+          RowBox[{
+            TemplateBox[{
+              SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+          RowBox[{
+            SubscriptBox["\[Lambda]", "1"], " ", 
+            SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+         "Hypergeometric1F1"], " ", 
+        TemplateBox[{
+          RowBox[{
+            FractionBox["1", "2"], " ", 
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{"-", 
+                  FractionBox[
+                   SuperscriptBox["k", "2"], 
+                   RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                TemplateBox[{
+                  SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+          RowBox[{
+            TemplateBox[{
+              SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+          RowBox[{
+            SubscriptBox["\[Lambda]", "2"], " ", 
+            SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+         "Hypergeometric1F1"], " ", 
+        SubsuperscriptBox["n", "1", "2"]}], 
+       SuperscriptBox["L", "2"]]}], "-", 
+     FractionBox[
+      RowBox[{"64", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        FractionBox[
+         RowBox[{"\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"4", " ", "\[Pi]", " ", 
+             SubscriptBox["n", "2"], " ", 
+             SubscriptBox["z", "1"]}], "+", 
+            RowBox[{"4", " ", "\[Pi]", " ", 
+             SubscriptBox["n", "1"], " ", 
+             SubscriptBox["z", "2"]}], "+", 
+            RowBox[{"L", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"\[ImaginaryI]", " ", 
+                SubscriptBox["\[Lambda]", "2"], " ", 
+                SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+               RowBox[{"\[ImaginaryI]", " ", 
+                SubscriptBox["\[Lambda]", "1"], " ", 
+                SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+               RowBox[{"2", " ", 
+                SubscriptBox["m", "2"], " ", 
+                SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+               RowBox[{"2", " ", 
+                SubscriptBox["m", "1"], " ", 
+                SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+         RowBox[{"2", " ", "L"}]]], " ", 
+       SuperscriptBox["\[Pi]", "2"], " ", 
+       TemplateBox[{
+         RowBox[{
+           FractionBox["1", "2"], " ", 
+           RowBox[{"(", 
+             RowBox[{
+               RowBox[{"-", 
+                 FractionBox[
+                  SuperscriptBox["k", "2"], 
+                  RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+               TemplateBox[{
+                 SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+         RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+         RowBox[{
+           SubscriptBox["\[Lambda]", "1"], " ", 
+           SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+        "Hypergeometric1F1"], " ", 
+       TemplateBox[{
+         RowBox[{
+           FractionBox["1", "2"], " ", 
+           RowBox[{"(", 
+             RowBox[{
+               RowBox[{"-", 
+                 FractionBox[
+                  SuperscriptBox["k", "2"], 
+                  RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+               TemplateBox[{
+                 SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+         RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+         RowBox[{
+           SubscriptBox["\[Lambda]", "2"], " ", 
+           SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+        "Hypergeometric1F1"], " ", 
+       SubsuperscriptBox["n", "2", "2"]}], 
+      SuperscriptBox["L", "2"]], "+", 
+     RowBox[{"16", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      SubsuperscriptBox["\[Lambda]", "1", "2"], " ", 
+      SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+     RowBox[{"16", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      SubsuperscriptBox["\[Lambda]", "2", "2"], " ", 
+      SubsuperscriptBox["\[Rho]", "1", "2"]}], "-", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{
+        TemplateBox[{
+          SubscriptBox["m", "1"]},
+         "Abs"], "+", "1"}]], "8", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "3"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "2"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      SubscriptBox["\[Lambda]", "1"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "1"]},
+            "Abs"], "+", "1"}], ")"}], " ", 
+         SubscriptBox["\[Lambda]", "1"]}], "-", 
+        SuperscriptBox["k", "2"]}], ")"}], " ", 
+      SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]},
+           "Abs"], "+", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]},
+           "Abs"], "+", "2"}], ")"}]}]], 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "5"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "3"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "1"]},
+            "Abs"], "+", "1"}], ")"}], " ", 
+         SubscriptBox["\[Lambda]", "1"]}], "-", 
+        SuperscriptBox["k", "2"]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "1"]},
+            "Abs"], "+", "3"}], ")"}], " ", 
+         SubscriptBox["\[Lambda]", "1"]}], "-", 
+        SuperscriptBox["k", "2"]}], ")"}], " ", 
+      SubsuperscriptBox["\[Rho]", "1", "2"]}], "-", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{
+        TemplateBox[{
+          SubscriptBox["m", "2"]},
+         "Abs"], "+", "1"}]], "8", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "3"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "2"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      SubscriptBox["\[Lambda]", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "2"]},
+            "Abs"], "+", "1"}], ")"}], " ", 
+         SubscriptBox["\[Lambda]", "2"]}], "-", 
+        SuperscriptBox["k", "2"]}], ")"}], " ", 
+      SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]},
+           "Abs"], "+", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]},
+           "Abs"], "+", "2"}], ")"}]}]], 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "5"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "3"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "2"]},
+            "Abs"], "+", "1"}], ")"}], " ", 
+         SubscriptBox["\[Lambda]", "2"]}], "-", 
+        SuperscriptBox["k", "2"]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "2"]},
+            "Abs"], "+", "3"}], ")"}], " ", 
+         SubscriptBox["\[Lambda]", "2"]}], "-", 
+        SuperscriptBox["k", "2"]}], ")"}], " ", 
+      SubsuperscriptBox["\[Rho]", "1", "2"]}], "-", 
+     RowBox[{"16", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      SubscriptBox["\[Lambda]", "1"]}], "+", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{
+        TemplateBox[{
+          SubscriptBox["m", "1"]},
+         "Abs"], "+", "1"}]], "4", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "3"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "2"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "1"]},
+            "Abs"], "+", "1"}], ")"}], " ", 
+         SubscriptBox["\[Lambda]", "1"]}], "-", 
+        SuperscriptBox["k", "2"]}], ")"}]}], "-", 
+     RowBox[{"16", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      SubscriptBox["\[Lambda]", "2"]}], "+", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{
+        TemplateBox[{
+          SubscriptBox["m", "2"]},
+         "Abs"], "+", "1"}]], "4", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "2"]}], "+", 
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]]], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "3"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "2"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "2"]},
+            "Abs"], "+", "1"}], ")"}], " ", 
+         SubscriptBox["\[Lambda]", "2"]}], "-", 
+        SuperscriptBox["k", "2"]}], ")"}]}], "+", 
+     RowBox[{"4", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         FractionBox["1", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]], "4", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", 
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"\[ImaginaryI]", " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"4", " ", "\[Pi]", " ", 
+                   SubscriptBox["n", "1"], " ", 
+                   SubscriptBox["z", "1"]}], "+", 
+                  RowBox[{"4", " ", "\[Pi]", " ", 
+                   SubscriptBox["n", "2"], " ", 
+                   SubscriptBox["z", "2"]}], "+", 
+                  RowBox[{"L", " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"\[ImaginaryI]", " ", 
+                    SubscriptBox["\[Lambda]", "1"], " ", 
+                    SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+                    RowBox[{"\[ImaginaryI]", " ", 
+                    SubscriptBox["\[Lambda]", "2"], " ", 
+                    SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+                    RowBox[{"2", " ", 
+                    SubscriptBox["m", "1"], " ", 
+                    SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                    RowBox[{"2", " ", 
+                    SubscriptBox["m", "2"], " ", 
+                    SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+               
+               RowBox[{"2", " ", "L"}]]]}], " ", 
+            TemplateBox[{
+              RowBox[{
+                FractionBox["1", "2"], " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                    TemplateBox[{
+                    SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+              RowBox[{
+                TemplateBox[{
+                  SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+              RowBox[{
+                SubscriptBox["\[Lambda]", "1"], " ", 
+                SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+             "Hypergeometric1F1"], " ", 
+            TemplateBox[{
+              RowBox[{
+                FractionBox["1", "2"], " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                    TemplateBox[{
+                    SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+              RowBox[{
+                TemplateBox[{
+                  SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+              RowBox[{
+                SubscriptBox["\[Lambda]", "2"], " ", 
+                SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+             "Hypergeometric1F1"], " ", 
+            SubsuperscriptBox["m", "1", "2"]}], "-", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"\[ImaginaryI]", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SubscriptBox["n", "2"], " ", 
+                  SubscriptBox["z", "1"]}], "+", 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SubscriptBox["n", "1"], " ", 
+                  SubscriptBox["z", "2"]}], "+", 
+                 RowBox[{"L", " ", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"\[ImaginaryI]", " ", 
+                    SubscriptBox["\[Lambda]", "2"], " ", 
+                    SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+                    RowBox[{"\[ImaginaryI]", " ", 
+                    SubscriptBox["\[Lambda]", "1"], " ", 
+                    SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+                    RowBox[{"2", " ", 
+                    SubscriptBox["m", "2"], " ", 
+                    SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                    RowBox[{"2", " ", 
+                    SubscriptBox["m", "1"], " ", 
+                    SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+              
+              RowBox[{"2", " ", "L"}]]], " ", 
+            TemplateBox[{
+              RowBox[{
+                FractionBox["1", "2"], " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                    TemplateBox[{
+                    SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+              RowBox[{
+                TemplateBox[{
+                  SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+              RowBox[{
+                SubscriptBox["\[Lambda]", "1"], " ", 
+                SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+             "Hypergeometric1F1"], " ", 
+            TemplateBox[{
+              RowBox[{
+                FractionBox["1", "2"], " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                    TemplateBox[{
+                    SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+              RowBox[{
+                TemplateBox[{
+                  SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+              RowBox[{
+                SubscriptBox["\[Lambda]", "2"], " ", 
+                SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+             "Hypergeometric1F1"], " ", 
+            SubsuperscriptBox["m", "2", "2"]}]}], ")"}]}], "-", 
+        RowBox[{"4", " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SubscriptBox["n", "1"], " ", 
+               SubscriptBox["z", "1"]}], "+", 
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SubscriptBox["n", "2"], " ", 
+               SubscriptBox["z", "2"]}], "+", 
+              RowBox[{"L", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"\[ImaginaryI]", " ", 
+                  SubscriptBox["\[Lambda]", "1"], " ", 
+                  SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+                 RowBox[{"\[ImaginaryI]", " ", 
+                  SubscriptBox["\[Lambda]", "2"], " ", 
+                  SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+                 RowBox[{"2", " ", 
+                  SubscriptBox["m", "1"], " ", 
+                  SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                 RowBox[{"2", " ", 
+                  SubscriptBox["m", "2"], " ", 
+                  SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+           RowBox[{"2", " ", "L"}]]], " ", 
+         TemplateBox[{
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                 TemplateBox[{
+                   SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+           RowBox[{
+             TemplateBox[{
+               SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+           RowBox[{
+             SubscriptBox["\[Lambda]", "1"], " ", 
+             SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+          "Hypergeometric1F1"], " ", 
+         TemplateBox[{
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                 TemplateBox[{
+                   SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+           RowBox[{
+             TemplateBox[{
+               SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+           RowBox[{
+             SubscriptBox["\[Lambda]", "2"], " ", 
+             SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+          "Hypergeometric1F1"], " ", 
+         SubscriptBox["\[Lambda]", "1"]}], "+", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "1"]},
+            "Abs"], "+", "1"}]], 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SubscriptBox["n", "1"], " ", 
+               SubscriptBox["z", "1"]}], "+", 
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SubscriptBox["n", "2"], " ", 
+               SubscriptBox["z", "2"]}], "+", 
+              RowBox[{"L", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"\[ImaginaryI]", " ", 
+                  SubscriptBox["\[Lambda]", "1"], " ", 
+                  SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+                 RowBox[{"\[ImaginaryI]", " ", 
+                  SubscriptBox["\[Lambda]", "2"], " ", 
+                  SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+                 RowBox[{"2", " ", 
+                  SubscriptBox["m", "1"], " ", 
+                  SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                 RowBox[{"2", " ", 
+                  SubscriptBox["m", "2"], " ", 
+                  SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+           RowBox[{"2", " ", "L"}]]], " ", 
+         TemplateBox[{
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                 TemplateBox[{
+                   SubscriptBox["m", "1"]}, "Abs"], "+", "3"}], ")"}]}], 
+           RowBox[{
+             TemplateBox[{
+               SubscriptBox["m", "1"]}, "Abs"], "+", "2"}], 
+           RowBox[{
+             SubscriptBox["\[Lambda]", "1"], " ", 
+             SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+          "Hypergeometric1F1"], " ", 
+         TemplateBox[{
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                 TemplateBox[{
+                   SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+           RowBox[{
+             TemplateBox[{
+               SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+           RowBox[{
+             SubscriptBox["\[Lambda]", "2"], " ", 
+             SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+          "Hypergeometric1F1"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              TemplateBox[{
+                SubscriptBox["m", "1"]},
+               "Abs"], "+", "1"}], ")"}], " ", 
+            SubscriptBox["\[Lambda]", "1"]}], "-", 
+           SuperscriptBox["k", "2"]}], ")"}]}], "-", 
+        RowBox[{"4", " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SubscriptBox["n", "2"], " ", 
+               SubscriptBox["z", "1"]}], "+", 
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SubscriptBox["n", "1"], " ", 
+               SubscriptBox["z", "2"]}], "+", 
+              RowBox[{"L", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"\[ImaginaryI]", " ", 
+                  SubscriptBox["\[Lambda]", "2"], " ", 
+                  SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+                 RowBox[{"\[ImaginaryI]", " ", 
+                  SubscriptBox["\[Lambda]", "1"], " ", 
+                  SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+                 RowBox[{"2", " ", 
+                  SubscriptBox["m", "2"], " ", 
+                  SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                 RowBox[{"2", " ", 
+                  SubscriptBox["m", "1"], " ", 
+                  SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+           RowBox[{"2", " ", "L"}]]], " ", 
+         TemplateBox[{
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                 TemplateBox[{
+                   SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+           RowBox[{
+             TemplateBox[{
+               SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+           RowBox[{
+             SubscriptBox["\[Lambda]", "1"], " ", 
+             SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+          "Hypergeometric1F1"], " ", 
+         TemplateBox[{
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                 TemplateBox[{
+                   SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+           RowBox[{
+             TemplateBox[{
+               SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+           RowBox[{
+             SubscriptBox["\[Lambda]", "2"], " ", 
+             SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+          "Hypergeometric1F1"], " ", 
+         SubscriptBox["\[Lambda]", "2"]}], "+", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{
+           TemplateBox[{
+             SubscriptBox["m", "2"]},
+            "Abs"], "+", "1"}]], 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SubscriptBox["n", "2"], " ", 
+               SubscriptBox["z", "1"]}], "+", 
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SubscriptBox["n", "1"], " ", 
+               SubscriptBox["z", "2"]}], "+", 
+              RowBox[{"L", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"\[ImaginaryI]", " ", 
+                  SubscriptBox["\[Lambda]", "2"], " ", 
+                  SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+                 RowBox[{"\[ImaginaryI]", " ", 
+                  SubscriptBox["\[Lambda]", "1"], " ", 
+                  SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+                 RowBox[{"2", " ", 
+                  SubscriptBox["m", "2"], " ", 
+                  SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                 RowBox[{"2", " ", 
+                  SubscriptBox["m", "1"], " ", 
+                  SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+           RowBox[{"2", " ", "L"}]]], " ", 
+         TemplateBox[{
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                 TemplateBox[{
+                   SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+           RowBox[{
+             TemplateBox[{
+               SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+           RowBox[{
+             SubscriptBox["\[Lambda]", "1"], " ", 
+             SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+          "Hypergeometric1F1"], " ", 
+         TemplateBox[{
+           RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", 
+                   FractionBox[
+                    SuperscriptBox["k", "2"], 
+                    RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                 TemplateBox[{
+                   SubscriptBox["m", "2"]}, "Abs"], "+", "3"}], ")"}]}], 
+           RowBox[{
+             TemplateBox[{
+               SubscriptBox["m", "2"]}, "Abs"], "+", "2"}], 
+           RowBox[{
+             SubscriptBox["\[Lambda]", "2"], " ", 
+             SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+          "Hypergeometric1F1"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"4", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              TemplateBox[{
+                SubscriptBox["m", "2"]},
+               "Abs"], "+", "1"}], ")"}], " ", 
+            SubscriptBox["\[Lambda]", "2"]}], "-", 
+           SuperscriptBox["k", "2"]}], ")"}]}]}], ")"}]}]}], ")"}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.8980733185385*^9},
+ CellLabel->
+  "Out[124]//TraditionalForm=",ExpressionUUID->"4706afff-fb3e-4230-ae52-\
+991a26459cbf"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{
+   "definicje", " ", "za", " ", "pomoc\:0105", " ", "kt\[OAcute]rych", " ", 
+    "policz\:0119", " ", "w", " ", "mathematice", " ", "iloczyn", " ", 
+    "funkcji", " ", "i", " ", "b\:0119d\:0119", " ", "m\[OAcute]g\[LSlash]", 
+    " ", "go", " ", "sca\[LSlash]kowa\[CAcute]", " ", "na", " ", "papierze", 
+    " ", 
+    RowBox[{"(", 
+     RowBox[{
+     "a", " ", "mo\:017ce", " ", "nawet", " ", "w", " ", "programie"}], 
+     ")"}]}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"firstlaplacedPsiRho1", " ", "=", " ", 
+     RowBox[{"Simplify", "[", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         TemplateBox[<|
+          "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+           "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], ",", 
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+           "input" -> "\\rho_1", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], "]"}], "/", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\rho_1", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"firstlaplacedPsiRho2", " ", "=", " ", 
+     RowBox[{"Simplify", "[", 
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          
+          TemplateBox[<|
+           "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+            "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], ",", 
+          TemplateBox[<|"boxes" -> FormBox[
+              SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+            "input" -> "\\rho_1", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"]}], "]"}], ",", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"firstlaplacedPsiPhi", " ", "=", " ", 
+     RowBox[{"Simplify", "[", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"D", "[", 
+          RowBox[{
+           
+           TemplateBox[<|
+            "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+             "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"], ",", 
+           TemplateBox[<|"boxes" -> FormBox[
+               SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], 
+             "errors" -> {}, "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"]}], "]"}], ",", 
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], 
+           "errors" -> {}, "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], "]"}], "/", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"firstlaplacedPsiZ", " ", "=", " ", 
+     RowBox[{"Simplify", "[", 
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          
+          TemplateBox[<|
+           "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+            "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], ",", 
+          TemplateBox[<|"boxes" -> FormBox[
+              SubscriptBox[
+               StyleBox["z", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+            "input" -> "z_1", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"]}], "]"}], ",", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox[
+             StyleBox["z", "TI"], "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "z_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"secondlaplacedPsiRho1", " ", "=", " ", 
+     RowBox[{"Simplify", "[", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         TemplateBox[<|
+          "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+           "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], ",", 
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+           "input" -> "\\rho_2", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], "]"}], "/", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+         "input" -> "\\rho_2", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"secondlaplacedPsiRho2", " ", "=", " ", 
+     RowBox[{"Simplify", "[", 
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          
+          TemplateBox[<|
+           "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+            "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], ",", 
+          TemplateBox[<|"boxes" -> FormBox[
+              SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+            "input" -> "\\rho_2", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"]}], "]"}], ",", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"secondlaplacedPsiPhi2", " ", "=", " ", 
+     RowBox[{"Simplify", "[", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"D", "[", 
+          RowBox[{
+           
+           TemplateBox[<|
+            "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+             "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"], ",", 
+           TemplateBox[<|"boxes" -> FormBox[
+               SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], 
+             "errors" -> {}, "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"]}], "]"}], ",", 
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], 
+           "errors" -> {}, "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], "]"}], "/", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"secondlaplacedPsiZ", " ", "=", " ", 
+     RowBox[{"Simplify", "[", 
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          
+          TemplateBox[<|
+           "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+            "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], ",", 
+          TemplateBox[<|"boxes" -> FormBox[
+              SubscriptBox[
+               StyleBox["z", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+            "input" -> "z_2", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"]}], "]"}], ",", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox[
+             StyleBox["z", "TI"], "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "z_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.8980722449877367`*^9, 3.89807227702811*^9}, {
+   3.8980730046864643`*^9, 3.898073183688043*^9}, {3.898073251200034*^9, 
+   3.8980733060399523`*^9}, {3.898073437347336*^9, 3.8980734783822317`*^9}, {
+   3.898073523921042*^9, 3.8980736163779163`*^9}, {3.898074018796151*^9, 
+   3.8980740520076323`*^9}, 3.8980740959126987`*^9},
+ CellLabel->
+  "In[142]:=",ExpressionUUID->"19215207-79bc-4e00-962c-1f9156020d43"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        SuperscriptBox["\[CapitalPsi]", "*"], TraditionalForm], 
+      "errors" -> {}, "input" -> "\\Psi^*", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "firstlaplacedPsiPhi2"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8980689348159018`*^9, 3.8980689818775167`*^9}, 
+   3.8980733169933853`*^9, {3.898074071158832*^9, 3.898074176776896*^9}},
+ CellLabel->
+  "In[156]:=",ExpressionUUID->"0aa3c27e-f249-4dc6-be64-07d999a8abea"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["1", 
+    SubsuperscriptBox["\[Rho]", "1", "2"]], 
+   SuperscriptBox["\[Rho]", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       TemplateBox[{
+         SubscriptBox["m", "1"]},
+        "Abs"], "+", 
+       TemplateBox[{
+         SubscriptBox["m", "2"]},
+        "Abs"]}], ")"}]}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["m", "1", "2"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"(", 
+       RowBox[{"-", 
+        RowBox[{"exp", "(", 
+         FractionBox[
+          RowBox[{"\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"L", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"\[ImaginaryI]", " ", 
+                 SubscriptBox["\[Lambda]", "1"], " ", 
+                 SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+                RowBox[{"\[ImaginaryI]", " ", 
+                 SubscriptBox["\[Lambda]", "2"], " ", 
+                 SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+                RowBox[{"2", " ", 
+                 SubscriptBox["m", "1"], " ", 
+                 SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                RowBox[{"2", " ", 
+                 SubscriptBox["m", "2"], " ", 
+                 SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}], "+", 
+             RowBox[{"4", " ", "\[Pi]", " ", 
+              SubscriptBox["n", "1"], " ", 
+              SubscriptBox["z", "1"]}], "+", 
+             RowBox[{"4", " ", "\[Pi]", " ", 
+              SubscriptBox["n", "2"], " ", 
+              SubscriptBox["z", "2"]}]}], ")"}]}], 
+          RowBox[{"2", " ", "L"}]], ")"}]}], ")"}]}], "-", 
+     RowBox[{
+      SubsuperscriptBox["m", "2", "2"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "1"], " ", 
+          SubsuperscriptBox["\[Rho]", "2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox["k", "2"], 
+                 RowBox[{"4", " ", 
+                   SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+              TemplateBox[{
+                SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+        RowBox[{
+          TemplateBox[{
+            SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+        RowBox[{
+          SubscriptBox["\[Lambda]", "2"], " ", 
+          SubsuperscriptBox["\[Rho]", "1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"exp", "(", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"L", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "2"], " ", 
+               SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+               SubscriptBox["\[Lambda]", "1"], " ", 
+               SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "2"], " ", 
+               SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+              RowBox[{"2", " ", 
+               SubscriptBox["m", "1"], " ", 
+               SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "2"], " ", 
+            SubscriptBox["z", "1"]}], "+", 
+           RowBox[{"4", " ", "\[Pi]", " ", 
+            SubscriptBox["n", "1"], " ", 
+            SubscriptBox["z", "2"]}]}], ")"}]}], 
+        RowBox[{"2", " ", "L"}]], ")"}]}]}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      TemplateBox[{
+        TemplateBox[{
+          RowBox[{
+            FractionBox["1", "2"], " ", 
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{"-", 
+                  FractionBox[
+                   SuperscriptBox["k", "2"], 
+                   RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                TemplateBox[{
+                  SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+          RowBox[{
+            TemplateBox[{
+              SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+          RowBox[{
+            SubscriptBox["\[Lambda]", "1"], " ", 
+            SubsuperscriptBox["\[Rho]", "2", "2"]}]}, "Hypergeometric1F1"]},
+       "Conjugate"], " ", 
+      TemplateBox[{
+        TemplateBox[{
+          RowBox[{
+            FractionBox["1", "2"], " ", 
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{"-", 
+                  FractionBox[
+                   SuperscriptBox["k", "2"], 
+                   RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                TemplateBox[{
+                  SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+          RowBox[{
+            TemplateBox[{
+              SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+          RowBox[{
+            SubscriptBox["\[Lambda]", "2"], " ", 
+            SubsuperscriptBox["\[Rho]", "1", "2"]}]}, "Hypergeometric1F1"]},
+       "Conjugate"], " ", 
+      RowBox[{"exp", "(", 
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"L", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["\[Lambda]", "2"], " ", 
+              SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+             RowBox[{
+              SubscriptBox["\[Lambda]", "1"], " ", 
+              SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+             RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 SubscriptBox["m", "2"], " ", 
+                 SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                RowBox[{
+                 SubscriptBox["m", "1"], " ", 
+                 SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+          "+", 
+          RowBox[{"4", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["n", "2"], " ", 
+              SubscriptBox["z", "1"]}], "+", 
+             RowBox[{
+              SubscriptBox["n", "1"], " ", 
+              SubscriptBox["z", "2"]}]}], ")"}]}]}], 
+         RowBox[{"2", " ", "L"}]]}], ")"}]}], "+", 
+     RowBox[{
+      TemplateBox[{
+        TemplateBox[{
+          RowBox[{
+            FractionBox["1", "2"], " ", 
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{"-", 
+                  FractionBox[
+                   SuperscriptBox["k", "2"], 
+                   RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "1"]}]]}], "+", 
+                TemplateBox[{
+                  SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], ")"}]}], 
+          RowBox[{
+            TemplateBox[{
+              SubscriptBox["m", "1"]}, "Abs"], "+", "1"}], 
+          RowBox[{
+            SubscriptBox["\[Lambda]", "1"], " ", 
+            SubsuperscriptBox["\[Rho]", "1", "2"]}]}, "Hypergeometric1F1"]},
+       "Conjugate"], " ", 
+      TemplateBox[{
+        TemplateBox[{
+          RowBox[{
+            FractionBox["1", "2"], " ", 
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{"-", 
+                  FractionBox[
+                   SuperscriptBox["k", "2"], 
+                   RowBox[{"4", " ", 
+                    SubscriptBox["\[Lambda]", "2"]}]]}], "+", 
+                TemplateBox[{
+                  SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], ")"}]}], 
+          RowBox[{
+            TemplateBox[{
+              SubscriptBox["m", "2"]}, "Abs"], "+", "1"}], 
+          RowBox[{
+            SubscriptBox["\[Lambda]", "2"], " ", 
+            SubsuperscriptBox["\[Rho]", "2", "2"]}]}, "Hypergeometric1F1"]},
+       "Conjugate"], " ", 
+      RowBox[{"exp", "(", 
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"L", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["\[Lambda]", "1"], " ", 
+              SubsuperscriptBox["\[Rho]", "1", "2"]}], "+", 
+             RowBox[{
+              SubscriptBox["\[Lambda]", "2"], " ", 
+              SubsuperscriptBox["\[Rho]", "2", "2"]}], "+", 
+             RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 SubscriptBox["m", "1"], " ", 
+                 SubscriptBox["\[CurlyPhi]", "1"]}], "+", 
+                RowBox[{
+                 SubscriptBox["m", "2"], " ", 
+                 SubscriptBox["\[CurlyPhi]", "2"]}]}], ")"}]}]}], ")"}]}], 
+          "+", 
+          RowBox[{"4", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["n", "1"], " ", 
+              SubscriptBox["z", "1"]}], "+", 
+             RowBox[{
+              SubscriptBox["n", "2"], " ", 
+              SubscriptBox["z", "2"]}]}], ")"}]}]}], 
+         RowBox[{"2", " ", "L"}]]}], ")"}]}]}], ")"}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.8980740866472692`*^9, 3.898074134674247*^9}, 
+   3.89807417468395*^9, 3.898074715914049*^9},
+ CellLabel->
+  "Out[156]//TraditionalForm=",ExpressionUUID->"07bb56f1-241b-457f-b333-\
+bfd3ca128860"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920., 1016.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"cfef633a-2535-4d75-9d25-1c988ab87b98"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 10005, 238, 570, "Input",ExpressionUUID->"b4a63eb6-c61e-4223-b958-dcbe90fdaefb"],
+Cell[10588, 262, 2591, 80, 172, "Output",ExpressionUUID->"d91ad760-8996-42dd-9681-b0002cd9d8ba"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13216, 347, 1027, 23, 131, "Input",ExpressionUUID->"8e02ba0c-3871-430a-b3b0-08ac8f3c1754"],
+Cell[14246, 372, 2521, 78, 167, "Output",ExpressionUUID->"e454bbd1-2c36-4663-9cb3-58f5eaeb908b"]
+}, Open  ]],
+Cell[16782, 453, 502, 13, 56, "Text",ExpressionUUID->"90924b98-e0e3-438f-a120-b645cc637fe7"],
+Cell[CellGroupData[{
+Cell[17309, 470, 156, 3, 108, "Section",ExpressionUUID->"181c2f20-acab-4e2d-b8b7-22b3aa7ff7b5"],
+Cell[17468, 475, 28617, 678, 880, "Input",ExpressionUUID->"2b2ea799-0089-4e62-8c78-9390e7b4905a"],
+Cell[CellGroupData[{
+Cell[46110, 1157, 1507, 32, 131, "Input",ExpressionUUID->"b2ecdb70-653f-4927-bdde-5d7a33574ea8"],
+Cell[47620, 1191, 53013, 1396, 1746, "Output",ExpressionUUID->"4706afff-fb3e-4230-ae52-991a26459cbf"]
+}, Open  ]],
+Cell[100648, 2590, 8669, 198, 732, "Input",ExpressionUUID->"19215207-79bc-4e00-962c-1f9156020d43"],
+Cell[CellGroupData[{
+Cell[109342, 2792, 575, 12, 72, "Input",ExpressionUUID->"0aa3c27e-f249-4dc6-be64-07d999a8abea"],
+Cell[109920, 2806, 11267, 308, 479, "Output",ExpressionUUID->"07bb56f1-241b-457f-b333-bfd3ca128860"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

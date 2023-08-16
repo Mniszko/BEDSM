@@ -1,0 +1,3385 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    141947,       3377]
+NotebookOptionsPosition[    136445,       3290]
+NotebookOutlinePosition[    136884,       3307]
+CellTagsIndexPosition[    136841,       3304]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$Assumptions", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Element", "[", 
+     RowBox[{"m1", ",", "Integers"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"n1", ",", "Integers"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"u1", ",", "Integers"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\rho_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], ",", "PositiveReals"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"z1", ",", "Reals"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], ",", "Reals"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"h1", ",", "Reals"}], "]"}], "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\rho_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], ",", "PositiveReals"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"z2", ",", "Reals"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], ",", "Reals"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"h2", ",", "Reals"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"m2", ",", "Integers"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"n2", ",", "Integers"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"u2", ",", "Integers"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{"L", ",", "Reals"}], "]"}], " ", "&&", " ", 
+    RowBox[{"Element", "[", 
+     RowBox[{
+      TemplateBox[<|
+       "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+        "input" -> "\\sigma", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], ",", "Reals"}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8985940140653877`*^9, 3.898594114438232*^9}, {
+  3.898655012816904*^9, 3.898655041666748*^9}},
+ CellLabel->
+  "In[116]:=",ExpressionUUID->"7d3b71bf-e558-4a2a-a7a2-f63dbcdfc454"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Definicje funkcji falowych i ich poszczeg\[OAcute]lnych element\[OAcute]w \
+(normalizacj\:0119 funkcji ",
+ StyleBox["hipergeometrycznych",
+  IgnoreSpellCheck->True],
+ " tej postaci \[LSlash]atwiej osi\:0105gn\:0105\[CAcute] ni\:017c funkcji \
+Laguerrea, tzn. tej jestem pewien - tamtej nie)"
+}], "Section",
+ CellChangeTimes->{{3.898594347049402*^9, 3.898594409889624*^9}, 
+   3.898594556968726*^9},ExpressionUUID->"21160062-439b-4c50-92ca-\
+7dbfafc5a4a9"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "phi1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "phi2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\rho_1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "r1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\rho_2", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "r2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"normzphi", " ", "=", " ", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"1", "/", 
+     RowBox[{"(", " ", 
+      RowBox[{"2", "Pi", " ", "L"}], " ", ")"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z11", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n1", " ", 
+     RowBox[{"z1", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m1", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R11", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m1"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h1"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u1"}], ",", 
+      RowBox[{"m1", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z22", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n2", " ", 
+     RowBox[{"z2", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "22"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m2", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R22", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m2"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h2"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u2"}], ",", 
+      RowBox[{"m2", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h2"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z12", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n1", " ", 
+     RowBox[{"z2", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "12"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{12}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m1", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R12", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m1"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h1"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u1"}], ",", 
+      RowBox[{"m1", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z21", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n2", " ", 
+     RowBox[{"z1", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m2", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R21", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m2"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h2"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u2"}], ",", 
+      RowBox[{"m2", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h2"}]}], "]"}]}]}], " ", 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.898594159242262*^9, 3.8985941636227503`*^9}, {
+  3.898594241300922*^9, 3.898594259878805*^9}, {3.898594310055438*^9, 
+  3.89859432752843*^9}, {3.898594466316102*^9, 3.898594501055975*^9}, {
+  3.89860227938103*^9, 3.898602317242681*^9}, {3.898604085590191*^9, 
+  3.898604089072337*^9}, {3.898606074468573*^9, 3.898606086372416*^9}, {
+  3.898606187029771*^9, 3.898606195965939*^9}, {3.898613177376792*^9, 
+  3.898613212928996*^9}, {3.898613451751669*^9, 3.898613452959944*^9}, {
+  3.8986146344685173`*^9, 3.8986146524455442`*^9}, {3.8986157353060427`*^9, 
+  3.898615737398816*^9}, {3.8986662329552526`*^9, 3.898666235405397*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"6ff1e494-76a2-406b-8fcc-039834d84f5b"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z11", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R11", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "12"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{12}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "  ", "=", " ", 
+   RowBox[{"Z12", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "12"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{12}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R12", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "21"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{21}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z21", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R21", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "22"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z22", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "22"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{22}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R22", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|
+    "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Psi", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "22"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{22}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "+", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "12"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{12}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "21"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{21}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}]}], ")"}], "/", 
+     RowBox[{"Sqrt", "[", "2", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "11"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z11", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], " ", "R11", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "12"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{12}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "  ", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z12", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "12"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{12}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], " ", "R12", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "21"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{21}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z21", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], " ", "R21", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "22"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z22", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "22"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{22}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], "R22", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       OverscriptBox["\[CapitalPsi]", "_"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\bar{\\Psi}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox[
+             OverscriptBox["\[Psi]", "_"], "11"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\bar{\\psi}_{11}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox[
+             OverscriptBox["\[Psi]", "_"], "12"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\bar{\\psi}_{12}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "+", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox[
+             OverscriptBox["\[Psi]", "_"], "21"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\bar{\\psi}_{21}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox[
+             OverscriptBox["\[Psi]", "_"], "22"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\bar{\\psi}_{22}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}]}], ")"}], "/", 
+     RowBox[{"Sqrt", "[", "2", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.898594446525518*^9, 3.898594457468514*^9}, {
+  3.898601110911042*^9, 3.898601152772053*^9}, {3.8986012012833433`*^9, 
+  3.898601203446857*^9}, {3.898601233999178*^9, 3.898601261600775*^9}, {
+  3.8986132239106207`*^9, 3.8986132366101503`*^9}, {3.898613435835067*^9, 
+  3.898613442140522*^9}, {3.898614659282984*^9, 3.898614665118177*^9}, {
+  3.89861532845837*^9, 3.898615342946877*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"662e7716-346e-4cb9-91f9-dbc95d063854"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"TraditionalForm", "[", 
+   TemplateBox[<|
+    "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Psi", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "]"}], " ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TraditionalForm", "[", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         OverscriptBox["\[CapitalPsi]", "_"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\bar{\\Psi}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{
+         TemplateBox[<|
+          "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+           "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], ",", "z1"}], "]"}], ",", "z1"}], "]"}]}], 
+    "]"}], "]"}], " "}]}], "Input",
+ CellChangeTimes->{{3.8985945226764193`*^9, 3.898594526345211*^9}, {
+   3.898594600227173*^9, 3.89859466588243*^9}, {3.8985947373815527`*^9, 
+   3.898594777249858*^9}, {3.898594925333699*^9, 3.8985949827863293`*^9}, {
+   3.898595033552537*^9, 3.8985950371705093`*^9}, {3.898596436358667*^9, 
+   3.898596515160884*^9}, {3.898596575499524*^9, 3.8985966156348057`*^9}, {
+   3.898601304775741*^9, 3.898601348973486*^9}, 3.898601418281024*^9, {
+   3.898615275909546*^9, 3.898615311569561*^9}, {3.898615368400155*^9, 
+   3.8986153872496157`*^9}},
+ CellLabel->
+  "In[1586]:=",ExpressionUUID->"58964899-6b45-44ec-90f7-a41c55c58172"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["L", "4"]}]]}], 
+   RowBox[{"exp", "(", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"h1", " ", 
+       SuperscriptBox["r1", "2"]}]}], "-", 
+     FractionBox[
+      RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+       RowBox[{"(", 
+        RowBox[{"n1", "+", "n2"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"z1", "+", "z2"}], ")"}]}], "L"], "-", 
+     RowBox[{"\[ImaginaryI]", " ", 
+      RowBox[{"(", 
+       RowBox[{"m1", "+", "m2"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"phi1", "+", "phi2"}], ")"}]}]}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["n1", "2"], " ", 
+      SuperscriptBox["r1", "m1"], " ", 
+      SuperscriptBox["r2", "m2"], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u1"}], 
+        RowBox[{"m1", "+", "1"}], 
+        RowBox[{"h1", " ", 
+          SuperscriptBox["r1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u2"}], 
+        RowBox[{"m2", "+", "1"}], 
+        RowBox[{"h2", " ", 
+          SuperscriptBox["r2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"exp", "(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"h2", " ", 
+          SuperscriptBox["r2", "2"]}], "2"], "+", 
+        FractionBox[
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"n1", " ", "z1"}], "+", 
+            RowBox[{"n2", " ", "z2"}]}], ")"}]}], "L"], "+", 
+        RowBox[{"\[ImaginaryI]", " ", "m1", " ", "phi1"}], "+", 
+        RowBox[{"\[ImaginaryI]", " ", "m2", " ", "phi2"}]}], ")"}]}], "+", 
+     RowBox[{
+      SuperscriptBox["n2", "2"], " ", 
+      SuperscriptBox["r2", "m1"], " ", 
+      SuperscriptBox["r1", "m2"], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u1"}], 
+        RowBox[{"m1", "+", "1"}], 
+        RowBox[{"h1", " ", 
+          SuperscriptBox["r2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u2"}], 
+        RowBox[{"m2", "+", "1"}], 
+        RowBox[{"h2", " ", 
+          SuperscriptBox["r1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"exp", "(", 
+       RowBox[{
+        FractionBox["1", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["r1", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"h1", "+", "h2"}], ")"}]}], "+", 
+          RowBox[{"h1", " ", 
+           SuperscriptBox["r2", "2"]}], "+", 
+          FractionBox[
+           RowBox[{"4", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"n1", " ", "z2"}], "+", 
+              RowBox[{"n2", " ", "z1"}]}], ")"}]}], "L"], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "m1", " ", "phi2"}], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "m2", " ", "phi1"}]}], 
+         ")"}]}], ")"}]}]}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"r1", " ", "r2"}], ")"}], "m2"], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u2"}], 
+        RowBox[{"m2", "+", "1"}], 
+        RowBox[{"h2", " ", 
+          SuperscriptBox["r1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u2"}], 
+        RowBox[{"m2", "+", "1"}], 
+        RowBox[{"h2", " ", 
+          SuperscriptBox["r2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      RowBox[{"exp", "(", 
+       RowBox[{
+        FractionBox["1", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["r1", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"h1", "+", "h2"}], ")"}]}], "+", 
+          RowBox[{"h2", " ", 
+           SuperscriptBox["r2", "2"]}], "+", 
+          FractionBox[
+           RowBox[{"4", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", "n1", " ", 
+            RowBox[{"(", 
+             RowBox[{"z1", "+", "z2"}], ")"}]}], "L"], "+", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "m1", " ", 
+           RowBox[{"(", 
+            RowBox[{"phi1", "+", "phi2"}], ")"}]}]}], ")"}]}], ")"}]}], "+", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"r1", " ", "r2"}], ")"}], "m1"], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u1"}], 
+        RowBox[{"m1", "+", "1"}], 
+        RowBox[{"h1", " ", 
+          SuperscriptBox["r1", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u1"}], 
+        RowBox[{"m1", "+", "1"}], 
+        RowBox[{"h1", " ", 
+          SuperscriptBox["r2", "2"]}]},
+       "Hypergeometric1F1"], " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"h1", " ", 
+          SuperscriptBox["r2", "2"]}], "2"], "+", 
+        FractionBox[
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", "n2", " ", 
+          RowBox[{"(", 
+           RowBox[{"z1", "+", "z2"}], ")"}]}], "L"], "+", 
+        RowBox[{"\[ImaginaryI]", " ", "m2", " ", 
+         RowBox[{"(", 
+          RowBox[{"phi1", "+", "phi2"}], ")"}]}]}]]}]}], ")"}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.898594518812284*^9, 3.898594526696458*^9}, 
+   3.8985946068567543`*^9, {3.898594640741478*^9, 3.898594666799664*^9}, {
+   3.8985947388190413`*^9, 3.8985947776675663`*^9}, {3.8985949312554007`*^9, 
+   3.8985949534628077`*^9}, 3.898596506981892*^9, {3.898596576111548*^9, 
+   3.8985966160446043`*^9}, 3.898596758647694*^9, {3.8986013174370813`*^9, 
+   3.8986013494770727`*^9}, 3.898601418866399*^9, 3.8986153163413343`*^9, {
+   3.898615374444336*^9, 3.898615387789068*^9}},
+ CellLabel->
+  "Out[1587]//TraditionalForm=",ExpressionUUID->"9b66a32b-7a32-4101-8963-\
+5b8f882ee307"]
+}, Open  ]],
+
+Cell[BoxData[
+ FormBox["", TraditionalForm]], "Input",
+ CellChangeTimes->{{3.898594693985446*^9, 3.89859469479221*^9}, {
+  3.8986015807384663`*^9, 
+  3.89860158736265*^9}},ExpressionUUID->"b82827e8-cbb0-435b-9bc5-\
+430e8bbdaac9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"m1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"u1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"h1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"m2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"u2", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"h2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"L", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+       "input" -> "\\sigma", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "=", "10"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R11", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"r1", "^", "m1"}], " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "h1"}], " ", 
+        RowBox[{
+         RowBox[{"r1", "^", "2"}], "/", "2"}]}], "]"}], " ", 
+      RowBox[{"Hypergeometric1F1", "[", 
+       RowBox[{
+        RowBox[{"-", "u1"}], ",", 
+        RowBox[{"m1", "+", "1"}], ",", 
+        RowBox[{
+         RowBox[{"r1", "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R21", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"r1", "^", "m2"}], " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "h2"}], " ", 
+        RowBox[{
+         RowBox[{"r1", "^", "2"}], "/", "2"}]}], "]"}], " ", 
+      RowBox[{"Hypergeometric1F1", "[", 
+       RowBox[{
+        RowBox[{"-", "u2"}], ",", 
+        RowBox[{"m2", "+", "1"}], ",", 
+        RowBox[{
+         RowBox[{"r1", "^", "2"}], " ", "h2"}]}], "]"}]}]}], " ", ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"TraditionalForm", "[", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"TraditionalForm", "[", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox[
+          OverscriptBox["\[Psi]", "_"], "11"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\bar{\\psi}_{11}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"TraditionalForm", "[", 
+    RowBox[{"R11", " ", "R11"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"NIntegrate", "[", 
+      RowBox[{
+       RowBox[{"R11", " ", "R21"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", 
+       RowBox[{"MinRecursion", "->", "10"}], ",", 
+       RowBox[{"MaxRecursion", "->", "20"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"NIntegrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Hypergeometric1F1", "[", 
+         RowBox[{
+          RowBox[{"-", "u1"}], ",", 
+          RowBox[{"m1", "+", "1"}], ",", 
+          RowBox[{
+           RowBox[{"r1", "^", "2"}], " ", "h1"}]}], "]"}], " ", 
+        RowBox[{"Hypergeometric1F1", "[", 
+         RowBox[{
+          RowBox[{"-", "u2"}], ",", 
+          RowBox[{"m2", "+", "1"}], ",", 
+          RowBox[{
+           RowBox[{"r1", "^", "2"}], " ", "h2"}]}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", 
+       RowBox[{"MinRecursion", "->", "10"}], ",", 
+       RowBox[{"MaxRecursion", "->", "20"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"NIntegrate", "[", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"LaguerreL", "[", 
+         RowBox[{"u1", ",", "m1", ",", 
+          RowBox[{
+           RowBox[{"r1", "^", "2"}], " ", "h1"}]}], "]"}], " ", 
+        RowBox[{"LaguerreL", "[", 
+         RowBox[{"u2", ",", "m2", ",", 
+          RowBox[{
+           RowBox[{"r1", "^", "2"}], " ", "h2"}]}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", 
+       RowBox[{"MinRecursion", "->", "10"}], ",", 
+       RowBox[{"MaxRecursion", "->", "20"}]}], "]"}], ";"}], 
+    "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|
+      "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+       "input" -> "\\Psi", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", "=", " ", 
+     RowBox[{"FullSimplify", "[", 
+      TemplateBox[<|
+       "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+        "input" -> "\\Psi", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         OverscriptBox["\[CapitalPsi]", "_"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\bar{\\Psi}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", "=", " ", 
+     RowBox[{"FullSimplify", "[", 
+      TemplateBox[<|"boxes" -> FormBox[
+          OverscriptBox["\[CapitalPsi]", "_"], TraditionalForm], 
+        "errors" -> {}, "input" -> "\\bar{\\Psi}", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"laplaced", " ", "=", " ", 
+    RowBox[{"FullSimplify", "[", 
+     RowBox[{
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           OverscriptBox["\[CapitalPsi]", "_"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\bar{\\Psi}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], " ", 
+       RowBox[{"Laplacian", "[", 
+        RowBox[{
+         TemplateBox[<|
+          "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+           "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], ",", 
+         RowBox[{"{", 
+          RowBox[{"r1", ",", "phi1", ",", "z1"}], "}"}], ",", 
+         "\"\<Cylindrical\>\""}], " ", "]"}]}], "+", 
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           OverscriptBox["\[CapitalPsi]", "_"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\bar{\\Psi}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], " ", 
+       RowBox[{"Laplacian", "[", 
+        RowBox[{
+         TemplateBox[<|
+          "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], 
+           "errors" -> {}, "input" -> "\\Psi", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], ",", 
+         RowBox[{"{", 
+          RowBox[{"r2", ",", "phi2", ",", "z2"}], "}"}], ",", 
+         "\"\<Cylindrical\>\""}], " ", "]"}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"N", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{"laplaced", ",", 
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "0", ",", "L"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r2", ",", "0", ",", "L"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"phi1", ",", "0", ",", 
+        RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"phi2", ",", "0", ",", 
+        RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"z1", ",", "0", ",", 
+        TemplateBox[<|
+         "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+          "input" -> "\\sigma", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z2", ",", "0", ",", 
+        TemplateBox[<|
+         "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+          "input" -> "\\sigma", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "}"}]}], "]"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Clear", "[", 
+    RowBox[{
+    "n1", ",", "m1", ",", " ", "u1", ",", " ", "h1", ",", " ", "L", ",", " ", 
+     
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+       "input" -> "\\sigma", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], ",", "r1", ",", "n2", ",", "m2", ",", " ", 
+     "u2", ",", " ", "h2", ",", " ", "r2"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.898596728857135*^9, 3.898596746440641*^9}, {
+   3.8986009961105556`*^9, 3.89860099836313*^9}, {3.898601044675449*^9, 
+   3.8986010977633533`*^9}, {3.8986014752935667`*^9, 3.898601520611971*^9}, {
+   3.898601551940157*^9, 3.898601554724353*^9}, {3.898601590699765*^9, 
+   3.898601759741353*^9}, {3.89860183018132*^9, 3.8986018331265*^9}, {
+   3.8986018997042723`*^9, 3.898601991475425*^9}, 3.898602098562976*^9, {
+   3.898602171642955*^9, 3.898602190942348*^9}, {3.898602245931981*^9, 
+   3.898602249453587*^9}, {3.8986023297260933`*^9, 3.8986023422807407`*^9}, {
+   3.8986023832228107`*^9, 3.898602402320191*^9}, {3.8986027432615547`*^9, 
+   3.898602824879135*^9}, {3.8986033758433847`*^9, 3.898603413653659*^9}, {
+   3.898603446222084*^9, 3.898603486774743*^9}, {3.8986035447408047`*^9, 
+   3.898603560685812*^9}, {3.8986036053363123`*^9, 3.898603692679558*^9}, {
+   3.898603893762246*^9, 3.8986038941356792`*^9}, {3.898604072256357*^9, 
+   3.898604077824479*^9}, {3.89860565226715*^9, 3.8986057520507917`*^9}, {
+   3.898605855141925*^9, 3.898605860636544*^9}, {3.8986060124396477`*^9, 
+   3.898606029612398*^9}, {3.8986060629210443`*^9, 3.898606063524988*^9}, {
+   3.898606109970593*^9, 3.898606110837071*^9}, {3.898606142270052*^9, 
+   3.898606173760312*^9}, {3.898606211751149*^9, 3.898606309006802*^9}, {
+   3.898606800248909*^9, 3.898606800966928*^9}, {3.89860683364655*^9, 
+   3.898606867515321*^9}, {3.89860691251322*^9, 3.8986069760872717`*^9}, 
+   3.898613168583799*^9, {3.8986155497882757`*^9, 3.898615973166153*^9}, {
+   3.89861607587743*^9, 3.898616176472871*^9}, {3.898616598375944*^9, 
+   3.898616608566463*^9}, {3.898653260070958*^9, 3.8986533154928226`*^9}, {
+   3.898653354142356*^9, 3.89865344202451*^9}, {3.89865347318918*^9, 
+   3.89865364460534*^9}, {3.898653754669161*^9, 
+   3.898653756301529*^9}},ExpressionUUID->"65a147a5-dd78-4867-96aa-\
+a6ac082ed484"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     SuperscriptBox["r1", "2"]}]], " ", 
+   SuperscriptBox["r1", "2"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       SuperscriptBox["r1", "2"], "2"]}], ")"}], "2"]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.8986156061990023`*^9, {3.898615640988306*^9, 3.89861564969228*^9}, {
+   3.8986156884281073`*^9, 3.898615786643585*^9}, {3.89861582914567*^9, 
+   3.898615973770747*^9}, {3.898616130157013*^9, 3.898616178018214*^9}, {
+   3.898616600704609*^9, 3.898616608978794*^9}, 3.8986532774217443`*^9, {
+   3.898653447590845*^9, 3.8986534768656683`*^9}, 3.8986535080625143`*^9, 
+   3.898653611557797*^9, 3.898653645599992*^9},
+ CellLabel->
+  "Out[2438]//TraditionalForm=",ExpressionUUID->"52005755-2187-4d32-92bb-\
+a4a5f9a994af"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"24", " ", 
+     SqrtBox["2"], " ", "\[Pi]"}]], 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", "\[ImaginaryI]", " ", "phi1"}], "+", 
+        RowBox[{"2", " ", "\[ImaginaryI]", " ", "phi2"}], "-", 
+        SuperscriptBox["r1", "2"], "+", 
+        SuperscriptBox["r2", "2"], "+", 
+        RowBox[{"4", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+         RowBox[{"(", 
+          RowBox[{"z1", "+", "z2"}], ")"}]}]}], ")"}]}]], " ", "r1", " ", 
+    "r2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "2"}], "+", 
+         SuperscriptBox["r1", "2"]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "72"}], "+", 
+         RowBox[{"30", " ", 
+          SuperscriptBox["r2", "2"]}], "-", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["r2", "4"]}], "+", 
+         SuperscriptBox["r2", "6"], "-", 
+         RowBox[{"8", " ", 
+          SuperscriptBox["\[Pi]", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"6", "-", 
+            RowBox[{"6", " ", 
+             SuperscriptBox["r2", "2"]}], "+", 
+            SuperscriptBox["r2", "4"]}], ")"}]}], "+", 
+         RowBox[{
+          SuperscriptBox["r1", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"6", "-", 
+            RowBox[{"6", " ", 
+             SuperscriptBox["r2", "2"]}], "+", 
+            SuperscriptBox["r2", "4"]}], ")"}]}]}], ")"}]}], "+", 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        SuperscriptBox["r1", "2"]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["r1", "6"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2"}], "+", 
+            SuperscriptBox["r2", "2"]}], ")"}]}], "-", 
+         RowBox[{"8", " ", 
+          SuperscriptBox["\[Pi]", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"6", "-", 
+            RowBox[{"6", " ", 
+             SuperscriptBox["r1", "2"]}], "+", 
+            SuperscriptBox["r1", "4"]}], ")"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2"}], "+", 
+            SuperscriptBox["r2", "2"]}], ")"}]}], "+", 
+         RowBox[{"6", " ", 
+          RowBox[{"(", 
+           RowBox[{"8", "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["r2", "2"]}], "+", 
+            SuperscriptBox["r2", "4"]}], ")"}]}], "-", 
+         RowBox[{"6", " ", 
+          SuperscriptBox["r1", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "6"}], "+", 
+            RowBox[{"9", " ", 
+             SuperscriptBox["r2", "2"]}], "+", 
+            SuperscriptBox["r2", "4"]}], ")"}]}], "+", 
+         RowBox[{
+          SuperscriptBox["r1", "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "12"}], "+", 
+            RowBox[{"12", " ", 
+             SuperscriptBox["r2", "2"]}], "+", 
+            SuperscriptBox["r2", "4"]}], ")"}]}]}], ")"}]}]}], ")"}], " ", 
+    OverscriptBox[
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          FractionBox["1", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "phi1"}], "+", 
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", "phi2"}], "-", 
+            SuperscriptBox["r1", "2"], "+", 
+            SuperscriptBox["r2", "2"], "+", 
+            RowBox[{"4", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+             RowBox[{"(", 
+              RowBox[{"z1", "+", "z2"}], ")"}]}]}], ")"}]}]], " ", "r1", " ", 
+        "r2", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            SuperscriptBox["r1", "2"]], " ", 
+           RowBox[{"(", 
+            RowBox[{"6", "-", 
+             RowBox[{"6", " ", 
+              SuperscriptBox["r1", "2"]}], "+", 
+             SuperscriptBox["r1", "4"]}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "2"}], "+", 
+             SuperscriptBox["r2", "2"]}], ")"}]}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "2"}], "+", 
+             SuperscriptBox["r1", "2"]}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{"6", "-", 
+             RowBox[{"6", " ", 
+              SuperscriptBox["r2", "2"]}], "+", 
+             SuperscriptBox["r2", "4"]}], ")"}]}]}], ")"}]}], 
+       RowBox[{"24", " ", 
+        SqrtBox["2"], " ", "\[Pi]"}]]}], "_"]}]}]}]], "Output",
+ CellChangeTimes->{
+  3.8986156061990023`*^9, {3.898615640988306*^9, 3.89861564969228*^9}, {
+   3.8986156884281073`*^9, 3.898615786643585*^9}, {3.89861582914567*^9, 
+   3.898615973770747*^9}, {3.898616130157013*^9, 3.898616178018214*^9}, {
+   3.898616600704609*^9, 3.898616608978794*^9}, 3.8986532774217443`*^9, {
+   3.898653447590845*^9, 3.8986534768656683`*^9}, 3.8986535080625143`*^9, 
+   3.898653611557797*^9, 3.898653651498168*^9},
+ CellLabel->
+  "Out[2441]=",ExpressionUUID->"48757109-3754-48e7-bb7f-f2794e829ee4"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "inumr", 
+   "\"The integrand \\!\\(\\*RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"2\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \\\" \\\", \
+\\\"phi1\\\"}], \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"\[ImaginaryI]\\\", \\\" \\\", \\\"phi2\\\"}], \\\"-\\\", \
+SuperscriptBox[\\\"r1\\\", \\\"2\\\"], \\\"+\\\", SuperscriptBox[\\\"r2\\\", \
+\\\"2\\\"], \\\"+\\\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \
+\\\" \\\", \\\"\[Pi]\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"z1\\\", \
+\\\"+\\\", \\\"z2\\\"}], \\\")\\\"}]}]}], \\\")\\\"}]}]], \\\" \\\", \\\"r1\\\
+\", \\\" \\\", \\\"r2\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", SuperscriptBox[\\\"r1\
+\\\", \\\"2\\\"]], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \
+\\\"-\\\", RowBox[{\\\"6\\\", \\\" \\\", SuperscriptBox[\\\"r1\\\", \
+\\\"2\\\"]}], \\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"4\\\"]}], \
+\\\")\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\
+\"}], \\\"+\\\", SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\")\\\"}]}], \
+\\\"+\\\", RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \
+\\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"2\\\"]}], \\\")\\\"}], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \\\"-\\\", RowBox[{\\\"6\\\", \\\" \
+\\\", SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\"+\\\", \
+SuperscriptBox[\\\"r2\\\", \\\"4\\\"]}], \\\")\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", OverscriptBox[RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"2\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \\\" \\\", \
+\\\"phi1\\\"}], \\\"+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"+\\\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\
+\[ImaginaryI]\\\", \\\" \\\", \\\"\[Pi]\\\", \\\" \\\", RowBox[{\\\"Plus\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]], \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", SuperscriptBox[\\\"r1\
+\\\", \\\"2\\\"]], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \
+\\\"-\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"4\\\"]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", \
+SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\")\\\"}]}], \\\"+\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\\\
+\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\")\\\"}]}], \
+RowBox[{\\\"24\\\", \\\" \\\", SqrtBox[\\\"2\\\"], \\\" \\\", \
+\\\"\[Pi]\\\"}]]}], \\\"_\\\"]}]\\) has evaluated to non-numerical values for \
+all sampling points in the region with boundaries \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \
+\\\"1\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\
+\",\\\", \\\"6.283185307179586`\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \
+\\\"6.283185307179586`\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0\\\", \\\",\\\", \\\"10\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"10\\\"}], \\\"}\\\"}]}], \
+\\\"}\\\"}]\\).\"", 2, 2442, 121, 31740777397265250942, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.898615956911167*^9, 3.898615973951231*^9}, {
+   3.898616130337838*^9, 3.898616178208273*^9}, {3.898616600912196*^9, 
+   3.89861660916166*^9}, 3.898653277592424*^9, {3.898653447766385*^9, 
+   3.89865347706201*^9}, 3.898653512125164*^9, {3.8986536319370537`*^9, 
+   3.898653654673153*^9}},
+ CellLabel->
+  "During evaluation of \
+In[2424]:=",ExpressionUUID->"b4c9db41-0e46-4d3b-aa08-3bc380dc86c2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "inumr", 
+   "\"The integrand \\!\\(\\*RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"2\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \\\" \\\", \
+\\\"phi1\\\"}], \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"\[ImaginaryI]\\\", \\\" \\\", \\\"phi2\\\"}], \\\"-\\\", \
+SuperscriptBox[\\\"r1\\\", \\\"2\\\"], \\\"+\\\", SuperscriptBox[\\\"r2\\\", \
+\\\"2\\\"], \\\"+\\\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \
+\\\" \\\", \\\"\[Pi]\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"z1\\\", \
+\\\"+\\\", \\\"z2\\\"}], \\\")\\\"}]}]}], \\\")\\\"}]}]], \\\" \\\", \\\"r1\\\
+\", \\\" \\\", \\\"r2\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", SuperscriptBox[\\\"r1\
+\\\", \\\"2\\\"]], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \
+\\\"-\\\", RowBox[{\\\"6\\\", \\\" \\\", SuperscriptBox[\\\"r1\\\", \
+\\\"2\\\"]}], \\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"4\\\"]}], \
+\\\")\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\
+\"}], \\\"+\\\", SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\")\\\"}]}], \
+\\\"+\\\", RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \
+\\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"2\\\"]}], \\\")\\\"}], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \\\"-\\\", RowBox[{\\\"6\\\", \\\" \
+\\\", SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\"+\\\", \
+SuperscriptBox[\\\"r2\\\", \\\"4\\\"]}], \\\")\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", OverscriptBox[RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"2\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \\\" \\\", \
+\\\"phi1\\\"}], \\\"+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"+\\\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\
+\[ImaginaryI]\\\", \\\" \\\", \\\"\[Pi]\\\", \\\" \\\", RowBox[{\\\"Plus\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]], \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", SuperscriptBox[\\\"r1\
+\\\", \\\"2\\\"]], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \
+\\\"-\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"4\\\"]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", \
+SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\")\\\"}]}], \\\"+\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\\\
+\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\")\\\"}]}], \
+RowBox[{\\\"24\\\", \\\" \\\", SqrtBox[\\\"2\\\"], \\\" \\\", \
+\\\"\[Pi]\\\"}]]}], \\\"_\\\"]}]\\) has evaluated to non-numerical values for \
+all sampling points in the region with boundaries \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \
+\\\"1\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\
+\",\\\", \\\"6.283185307179586`\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \
+\\\"6.283185307179586`\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0\\\", \\\",\\\", \\\"10\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"10\\\"}], \\\"}\\\"}]}], \
+\\\"}\\\"}]\\).\"", 2, 2442, 122, 31740777397265250942, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.898615956911167*^9, 3.898615973951231*^9}, {
+   3.898616130337838*^9, 3.898616178208273*^9}, {3.898616600912196*^9, 
+   3.89861660916166*^9}, 3.898653277592424*^9, {3.898653447766385*^9, 
+   3.89865347706201*^9}, 3.898653512125164*^9, {3.8986536319370537`*^9, 
+   3.8986536546937838`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[2424]:=",ExpressionUUID->"3665b612-7551-4c5b-9a73-6856ba504ccb"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "inumr", 
+   "\"The integrand \\!\\(\\*RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"2\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \\\" \\\", \
+\\\"phi1\\\"}], \\\"+\\\", RowBox[{\\\"2\\\", \\\" \\\", \
+\\\"\[ImaginaryI]\\\", \\\" \\\", \\\"phi2\\\"}], \\\"-\\\", \
+SuperscriptBox[\\\"r1\\\", \\\"2\\\"], \\\"+\\\", SuperscriptBox[\\\"r2\\\", \
+\\\"2\\\"], \\\"+\\\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \
+\\\" \\\", \\\"\[Pi]\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"z1\\\", \
+\\\"+\\\", \\\"z2\\\"}], \\\")\\\"}]}]}], \\\")\\\"}]}]], \\\" \\\", \\\"r1\\\
+\", \\\" \\\", \\\"r2\\\", \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", SuperscriptBox[\\\"r1\
+\\\", \\\"2\\\"]], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \
+\\\"-\\\", RowBox[{\\\"6\\\", \\\" \\\", SuperscriptBox[\\\"r1\\\", \
+\\\"2\\\"]}], \\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"4\\\"]}], \
+\\\")\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\
+\"}], \\\"+\\\", SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\")\\\"}]}], \
+\\\"+\\\", RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \
+\\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"2\\\"]}], \\\")\\\"}], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \\\"-\\\", RowBox[{\\\"6\\\", \\\" \
+\\\", SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\"+\\\", \
+SuperscriptBox[\\\"r2\\\", \\\"4\\\"]}], \\\")\\\"}]}]}], \\\")\\\"}], \\\" \
+\\\", OverscriptBox[RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"2\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"2\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \\\" \\\", \
+\\\"phi1\\\"}], \\\"+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"+\\\", RowBox[{\\\"4\\\", \\\" \\\", \\\"\
+\[ImaginaryI]\\\", \\\" \\\", \\\"\[Pi]\\\", \\\" \\\", RowBox[{\\\"Plus\\\", \
+\\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"]\\\"}]}]}], \\\")\\\"}]}]], \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", SuperscriptBox[\\\"r1\
+\\\", \\\"2\\\"]], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{\\\"6\\\", \
+\\\"-\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\"+\\\", SuperscriptBox[\\\"r1\\\", \\\"4\\\"]}], \\\")\\\"}], \\\" \
+\\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", \
+SuperscriptBox[\\\"r2\\\", \\\"2\\\"]}], \\\")\\\"}]}], \\\"+\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\")\\\"}], \\\" \\\", RowBox[{\\\"\[LeftSkeleton]\\\
+\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}]}], \\\")\\\"}]}], \
+RowBox[{\\\"24\\\", \\\" \\\", SqrtBox[\\\"2\\\"], \\\" \\\", \
+\\\"\[Pi]\\\"}]]}], \\\"_\\\"]}]\\) has evaluated to non-numerical values for \
+all sampling points in the region with boundaries \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \
+\\\"1\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\
+\",\\\", \\\"6.283185307179586`\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \
+\\\"6.283185307179586`\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0\\\", \\\",\\\", \\\"10\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"10\\\"}], \\\"}\\\"}]}], \
+\\\"}\\\"}]\\).\"", 2, 2442, 123, 31740777397265250942, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.898615956911167*^9, 3.898615973951231*^9}, {
+   3.898616130337838*^9, 3.898616178208273*^9}, {3.898616600912196*^9, 
+   3.89861660916166*^9}, 3.898653277592424*^9, {3.898653447766385*^9, 
+   3.89865347706201*^9}, 3.898653512125164*^9, {3.8986536319370537`*^9, 
+   3.8986536547130957`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[2424]:=",ExpressionUUID->"eaaf09af-ed86-45a2-9d0b-64027431e047"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"NIntegrate\\\", \
+\\\"::\\\", \\\"inumr\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"", 2, 2442, 124, 31740777397265250942, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.898615956911167*^9, 3.898615973951231*^9}, {
+   3.898616130337838*^9, 3.898616178208273*^9}, {3.898616600912196*^9, 
+   3.89861660916166*^9}, 3.898653277592424*^9, {3.898653447766385*^9, 
+   3.89865347706201*^9}, 3.898653512125164*^9, {3.8986536319370537`*^9, 
+   3.898653654730953*^9}},
+ CellLabel->
+  "During evaluation of \
+In[2424]:=",ExpressionUUID->"e0bff3ab-3ce7-41ef-8b29-11f71bb5c00c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"L", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|
+    "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, "input" -> 
+     "\\sigma", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R11", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"r1", "^", "m1"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h1"}], " ", 
+      RowBox[{
+       RowBox[{"r1", "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u1"}], ",", 
+      RowBox[{"m1", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{"r1", "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hypNorm", " ", "=", " ", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"1", "/", 
+        RowBox[{"NIntegrate", "[", 
+         RowBox[{
+          RowBox[{"R11", " ", "R11"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"r1", ",", "0", ",", 
+            
+            TemplateBox[<|
+             "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+              "input" -> "\\sigma", "state" -> "Boxes"|>,
+             "TeXAssistantTemplate"]}], "}"}], ",", 
+          RowBox[{"MinRecursion", "->", "10"}], ",", 
+          RowBox[{"MaxRecursion", "->", "20"}]}], "]"}]}], "/", "L"}], "/", 
+      "2"}], "/", "Pi"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z11", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R11", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "12"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{12}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "  ", "=", " ", 
+   RowBox[{"Z12", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "12"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{12}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R12", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "21"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{21}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z21", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R21", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "22"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z22", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "22"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{22}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R22", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|
+    "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Psi", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "22"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{22}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "+", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "12"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{12}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "21"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{21}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}]}], ")"}], "/", 
+     RowBox[{"Sqrt", "[", "2", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "11"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z11", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], " ", "R11", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "12"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{12}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "  ", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z12", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "12"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{12}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], " ", "R12", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "21"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{21}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z21", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], " ", "R21", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "22"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z22", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "22"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{22}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], " ", ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], "R22", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        OverscriptBox["\[CapitalPsi]", "_"], TraditionalForm], "errors" -> {},
+       "input" -> "\\bar{\\Psi}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "=", " ", 
+    RowBox[{"FullSimplify", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox[
+              OverscriptBox["\[Psi]", "_"], "11"], TraditionalForm], 
+           "errors" -> {}, "input" -> "\\bar{\\psi}_{11}", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], " ", 
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox[
+              OverscriptBox["\[Psi]", "_"], "12"], TraditionalForm], 
+           "errors" -> {}, "input" -> "\\bar{\\psi}_{12}", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}], "+", 
+        RowBox[{
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox[
+              OverscriptBox["\[Psi]", "_"], "21"], TraditionalForm], 
+           "errors" -> {}, "input" -> "\\bar{\\psi}_{21}", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"], 
+         TemplateBox[<|"boxes" -> FormBox[
+             SubscriptBox[
+              OverscriptBox["\[Psi]", "_"], "22"], TraditionalForm], 
+           "errors" -> {}, "input" -> "\\bar{\\psi}_{22}", "state" -> "Boxes"|>,
+          "TeXAssistantTemplate"]}]}], ")"}], "/", 
+      RowBox[{"Sqrt", "[", "2", "]"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"laplaced", " ", "=", " ", 
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        OverscriptBox["\[CapitalPsi]", "_"], TraditionalForm], "errors" -> {},
+       "input" -> "\\bar{\\Psi}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", 
+    RowBox[{"Laplacian", "[", 
+     RowBox[{
+      TemplateBox[<|
+       "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+        "input" -> "\\Psi", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], ",", 
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "phi1", ",", "z1"}], "}"}], ",", 
+      "\"\<Cylindrical\>\""}], " ", "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"integrated", " ", "=", " ", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"-", "laplaced"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r1", ",", "0", ",", 
+       TemplateBox[<|
+        "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+         "input" -> "\\sigma", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"phi1", ",", "0", ",", 
+       RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"z1", ",", "0", ",", "L"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r2", ",", "0", ",", 
+       TemplateBox[<|
+        "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+         "input" -> "\\sigma", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"phi2", ",", "0", ",", 
+       RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"z2", ",", "0", ",", "L"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", "integrated", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "n1", ",", "m1", ",", " ", "u1", ",", " ", "h1", ",", " ", "L", ",", " ", 
+   TemplateBox[<|
+    "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, "input" -> 
+     "\\sigma", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], ",", "r1", ",", "n2", ",", "m2", ",", " ", "u2", 
+   ",", " ", "h2", ",", " ", "r2", ",", "hypNorm"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8986537033310623`*^9, 3.8986537911229486`*^9}, {
+   3.8986538342600822`*^9, 3.898653851234086*^9}, {3.898653893217436*^9, 
+   3.8986539617224283`*^9}, {3.898653992803475*^9, 3.89865399294667*^9}, {
+   3.898654053596764*^9, 3.898654117426125*^9}, {3.898654445974078*^9, 
+   3.8986544551985273`*^9}, {3.898654906764491*^9, 3.898654944043271*^9}, {
+   3.898655050572513*^9, 3.898655092967101*^9}, {3.898655124247426*^9, 
+   3.89865515139797*^9}, {3.8986553266473703`*^9, 3.898655438719413*^9}, {
+   3.8986554926286993`*^9, 3.898655681667349*^9}, {3.898655799419303*^9, 
+   3.898655820945018*^9}, 3.898655876042913*^9, {3.898655910578257*^9, 
+   3.898655924017847*^9}, {3.8986560362060547`*^9, 3.8986560986321507`*^9}, {
+   3.8986561494487343`*^9, 3.898656167478898*^9}, {3.898656208172756*^9, 
+   3.898656305302334*^9}, {3.8986563797443933`*^9, 3.898656387664365*^9}, {
+   3.89865646152635*^9, 3.8986564617369823`*^9}},
+ CellLabel->
+  "In[3738]:=",ExpressionUUID->"37c7eee8-10fe-4117-8202-51d59230b493"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"0.00044793797823888083`", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["r1", "2"]}], "+", 
+     SuperscriptBox["r2", "2"]}]], " ", 
+   RowBox[{"(", 
+    RowBox[{"6.`", "\[VeryThinSpace]", "+", 
+     RowBox[{"6.`", " ", "r1"}], "-", 
+     RowBox[{"6.`", " ", 
+      SuperscriptBox["r1", "3"]}], "+", 
+     RowBox[{"1.`", " ", 
+      SuperscriptBox["r1", "5"]}]}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{"6.`", "\[VeryThinSpace]", "+", 
+     RowBox[{"r1", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "12.`"}], "+", 
+        RowBox[{"r1", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "77.99999999999999`"}], "+", 
+           RowBox[{"r1", " ", 
+            RowBox[{"(", 
+             RowBox[{"6.`", "\[VeryThinSpace]", "+", 
+              RowBox[{"79.`", " ", "r1"}], "-", 
+              RowBox[{"17.999999999999996`", " ", 
+               SuperscriptBox["r1", "3"]}], "+", 
+              RowBox[{"1.`", " ", 
+               SuperscriptBox["r1", "5"]}]}], ")"}]}]}], ")"}]}]}], ")"}]}]}],
+     ")"}]}], "r1"]], "Output",
+ CellChangeTimes->{
+  3.89865506008689*^9, {3.898655127439906*^9, 3.8986551519905033`*^9}, {
+   3.8986553274374933`*^9, 3.8986554470297003`*^9}, 3.89865549861998*^9, {
+   3.898655539451548*^9, 3.8986555547066317`*^9}, {3.898655589575336*^9, 
+   3.898655682536182*^9}, {3.8986558005664053`*^9, 3.8986558218525047`*^9}, {
+   3.898655911104796*^9, 3.898655924600739*^9}, {3.89865604374125*^9, 
+   3.898656099331942*^9}, 3.898656174643402*^9, {3.8986562107229843`*^9, 
+   3.898656275567884*^9}, 3.898656306733382*^9, 3.898656388241131*^9, 
+   3.8986564627777567`*^9},
+ CellLabel->
+  "Out[3760]=",ExpressionUUID->"64d3b354-2c96-4601-a512-be950fb20d3b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Integrate", "idiv", 
+   "\"Integral of \\!\\(\\*RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{\\\"2.388884361157669`*^40\\\", \\\" \\\", \
+SuperscriptBox[\\\"\[ExponentialE]\\\", RowBox[{\\\"-\\\", \
+SuperscriptBox[\\\"r1\\\", \\\"2\\\"]}]], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"6.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
+RowBox[{\\\"6.`\\\", \\\" \\\", \\\"r1\\\"}], \\\"-\\\", RowBox[{\\\"6.`\\\", \
+\\\" \\\", SuperscriptBox[\\\"r1\\\", \\\"3\\\"]}], \\\"+\\\", \
+RowBox[{\\\"1.`\\\", \\\" \\\", SuperscriptBox[\\\"r1\\\", \\\"5\\\"]}]}], \\\
+\")\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"6.`\\\", \\\"\
+\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"12.`\\\", \\\" \\\", \
+\\\"r1\\\"}], \\\"-\\\", RowBox[{\\\"77.99999999999999`\\\", \\\" \\\", \
+SuperscriptBox[\\\"r1\\\", \\\"2\\\"]}], \\\"+\\\", RowBox[{\\\"6.`\\\", \\\" \
+\\\", SuperscriptBox[\\\"r1\\\", \\\"3\\\"]}], \\\"+\\\", \
+RowBox[{\\\"79.`\\\", \\\" \\\", SuperscriptBox[\\\"r1\\\", \\\"4\\\"]}], \
+\\\"-\\\", RowBox[{\\\"17.999999999999996`\\\", \\\" \\\", \
+SuperscriptBox[\\\"r1\\\", \\\"6\\\"]}], \\\"+\\\", RowBox[{\\\"1.`\\\", \\\" \
+\\\", SuperscriptBox[\\\"r1\\\", \\\"8\\\"]}]}], \\\")\\\"}]}], \\\"r1\\\"]}]\
+\\) does not converge on \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\
+\\\", \\\"10\\\"}], \\\"}\\\"}]\\).\"", 2, 3761, 197, 31740777397265250942, 
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8986563890891457`*^9, 3.898656463520287*^9},
+ CellLabel->
+  "During evaluation of \
+In[3738]:=",ExpressionUUID->"7a29bb7d-8d54-431f-8102-5e17f8b1dd5e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Integrate", "idiv", 
+   "\"Integral of \\!\\(\\*RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{\\\"2.388884361157669`*^40\\\", \\\" \\\", \
+SuperscriptBox[\\\"\[ExponentialE]\\\", RowBox[{\\\"-\\\", \
+SuperscriptBox[\\\"r1\\\", \\\"2\\\"]}]], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"6.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
+RowBox[{\\\"6.`\\\", \\\" \\\", \\\"r1\\\"}], \\\"-\\\", RowBox[{\\\"6.`\\\", \
+\\\" \\\", SuperscriptBox[\\\"r1\\\", \\\"3\\\"]}], \\\"+\\\", \
+RowBox[{\\\"1.`\\\", \\\" \\\", SuperscriptBox[\\\"r1\\\", \\\"5\\\"]}]}], \\\
+\")\\\"}], \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"6.`\\\", \\\"\
+\[VeryThinSpace]\\\"}], \\\"-\\\", RowBox[{\\\"12.`\\\", \\\" \\\", \
+\\\"r1\\\"}], \\\"-\\\", RowBox[{\\\"77.99999999999999`\\\", \\\" \\\", \
+SuperscriptBox[\\\"r1\\\", \\\"2\\\"]}], \\\"+\\\", RowBox[{\\\"6.`\\\", \\\" \
+\\\", SuperscriptBox[\\\"r1\\\", \\\"3\\\"]}], \\\"+\\\", \
+RowBox[{\\\"79.`\\\", \\\" \\\", SuperscriptBox[\\\"r1\\\", \\\"4\\\"]}], \
+\\\"-\\\", RowBox[{\\\"17.999999999999996`\\\", \\\" \\\", \
+SuperscriptBox[\\\"r1\\\", \\\"6\\\"]}], \\\"+\\\", RowBox[{\\\"1.`\\\", \\\" \
+\\\", SuperscriptBox[\\\"r1\\\", \\\"8\\\"]}]}], \\\")\\\"}]}], \\\"r1\\\"]}]\
+\\) does not converge on \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\
+\\\", \\\"10\\\"}], \\\"}\\\"}]\\).\"", 2, 3761, 198, 31740777397265250942, 
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8986563890891457`*^9, 3.898656463878202*^9},
+ CellLabel->
+  "During evaluation of \
+In[3738]:=",ExpressionUUID->"9e486da3-d7a5-4dcc-8ee4-200075b01cfb"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "ncvb", 
+   "\"NIntegrate failed to converge to prescribed accuracy after \
+\\!\\(\\*RowBox[{\\\"9\\\"}]\\) recursive bisections in \
+\\!\\(\\*RowBox[{\\\"r1\\\"}]\\) near \\!\\(\\*RowBox[{\\\"{\\\", \\\"r1\\\", \
+\\\"}\\\"}]\\) = \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"1.6307264337491245`*^-28\\\", \\\"}\\\"}]\\). NIntegrate obtained \
+\\!\\(\\*RowBox[{\\\"-\\\", \\\"6.451242202821571`*^44\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"2.553606937483253`*^44\\\"}]\\) for the integral and \
+error estimates.\"", 2, 3762, 199, 31740777397265250942, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8986563890891457`*^9, 3.89865646389771*^9},
+ CellLabel->
+  "During evaluation of \
+In[3738]:=",ExpressionUUID->"585d0637-4360-427d-9208-51b97936d0d8"],
+
+Cell[BoxData[
+ RowBox[{"-", "6.451242202821571`*^44"}]], "Output",
+ CellChangeTimes->{
+  3.89865506008689*^9, {3.898655127439906*^9, 3.8986551519905033`*^9}, {
+   3.8986553274374933`*^9, 3.8986554470297003`*^9}, 3.89865549861998*^9, {
+   3.898655539451548*^9, 3.8986555547066317`*^9}, {3.898655589575336*^9, 
+   3.898655682536182*^9}, {3.8986558005664053`*^9, 3.8986558218525047`*^9}, {
+   3.898655911104796*^9, 3.898655924600739*^9}, {3.89865604374125*^9, 
+   3.898656099331942*^9}, 3.898656174643402*^9, {3.8986562107229843`*^9, 
+   3.898656275567884*^9}, 3.898656306733382*^9, 3.898656388241131*^9, 
+   3.898656463915139*^9},
+ CellLabel->
+  "Out[3762]=",ExpressionUUID->"7f022d69-299f-4bd6-bffa-cfb8fa3ab634"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "n1", ",", "m1", ",", " ", "u1", ",", " ", "h1", ",", " ", "L", ",", " ", 
+    TemplateBox[<|
+     "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, "input" -> 
+      "\\sigma", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], ",", "r1", ",", "n2", ",", "m2", ",", " ", "u2",
+     ",", " ", "h2", ",", " ", "r2", ",", "hypNorm"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z11", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n1", " ", 
+     RowBox[{"z1", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m1", " ", "phi1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R11", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"r1", "^", "m1"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h1"}], " ", 
+      RowBox[{
+       RowBox[{"r1", "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u1"}], ",", 
+      RowBox[{"m1", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{"r1", "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z11", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R11", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[Psi]", "_"], "11"], TraditionalForm], "errors" -> {},
+      "input" -> "\\bar{\\psi}_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Z11", " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"]}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}]}], " ", "R11", " ", "hypNorm"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a1", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{"Laplacian", "[", 
+     RowBox[{"R11", ",", 
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "phi1", ",", "z1"}], "}"}], ",", 
+      "\"\<Cylindrical\>\""}], " ", "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", "a1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a1", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"r", " ", 
+        RowBox[{"D", "[", 
+         RowBox[{"R11", ",", "r1"}], "]"}]}], ",", "r1"}], "]"}], "/", "r"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", "a1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a1", " ", "=", " ", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{"R11", ",", "r1"}], "]"}], "/", "r"}], "+", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{"R11", ",", "r1"}], "]"}], ",", "r1"}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", "a1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a2", "=", 
+   RowBox[{"FullSimplify", "[", "R11", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{"a2", "*", "a1"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox[
+         OverscriptBox["\[Psi]", "_"], "11"], TraditionalForm], 
+      "errors" -> {}, "input" -> "\\bar{\\psi}_{11}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", 
+    RowBox[{"Laplacian", "[", 
+     RowBox[{
+      TemplateBox[<|"boxes" -> FormBox[
+          SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+        "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+       "TeXAssistantTemplate"], ",", 
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "phi1", ",", "z1"}], "}"}], ",", 
+      "\"\<Cylindrical\>\""}], " ", "]"}]}], "]"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{"R11", " ", 
+    RowBox[{"Laplacian", "[", 
+     RowBox[{"R11", ",", 
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "phi1", ",", "z1"}], "}"}], ",", 
+      "\"\<Cylindrical\>\""}], " ", "]"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.898656438010764*^9, 3.898656449286008*^9}, {
+  3.8986565326866007`*^9, 3.898656547187557*^9}, {3.898656606635991*^9, 
+  3.898656696257348*^9}, {3.898656841644401*^9, 3.898656853456257*^9}, {
+  3.898657443097959*^9, 3.898657449955667*^9}, {3.898657486785962*^9, 
+  3.898657526416415*^9}, {3.8986576063240757`*^9, 3.898657650177801*^9}, {
+  3.8986595820766582`*^9, 3.8986596867917757`*^9}, {3.898659755768528*^9, 
+  3.898659849393424*^9}, {3.89915985191527*^9, 
+  3.899159901077532*^9}},ExpressionUUID->"fce31b6e-b9ec-4c43-9735-\
+200721a39884"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox[
+      SuperscriptBox["r1", "2"], "2"]}]], " ", 
+   SuperscriptBox["r1", 
+    RowBox[{"m1", "-", "2"}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"m1", "-", 
+        SuperscriptBox["r1", "2"]}], ")"}], "2"], "-", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["r1", "2"], " ", "u1"}], "-", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["r1", "2"]}]}], ")"}], " ", 
+   TemplateBox[{
+     RowBox[{"-", "u1"}], 
+     RowBox[{"m1", "+", "1"}], 
+     SuperscriptBox["r1", "2"]},
+    "Hypergeometric1F1"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.898656449937191*^9, 3.8986564665484743`*^9}, {
+   3.898656535185402*^9, 3.8986565515043097`*^9}, {3.898656613378797*^9, 
+   3.8986566968661222`*^9}, 3.898656854077589*^9, 3.89865745048558*^9, {
+   3.898657490204081*^9, 3.898657527107415*^9}, {3.8986576151351337`*^9, 
+   3.898657650646875*^9}, 3.8986595840395317`*^9, {3.898659637147398*^9, 
+   3.898659655241062*^9}, 3.8986596872591667`*^9, 3.8986597823357887`*^9, {
+   3.898659812471345*^9, 3.8986598498798113`*^9}},
+ CellLabel->
+  "Out[4017]//TraditionalForm=",ExpressionUUID->"b9d24157-027d-4718-8c75-\
+45c1bc3024c2"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox[
+      SuperscriptBox["r1", "2"], "2"]}]], " ", 
+   SuperscriptBox["r1", 
+    RowBox[{"m1", "-", "2"}]], " ", 
+   TemplateBox[{
+     RowBox[{"m1", "+", "1"}]},
+    "Gamma"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["m1", "2"], "-", 
+        RowBox[{"m1", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"2", " ", 
+            SuperscriptBox["r1", "2"]}], "+", "1"}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["r1", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["r1", "2"], "-", 
+           RowBox[{"4", " ", "u1"}], "-", "3"}], ")"}]}]}], ")"}], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u1"}], 
+        RowBox[{"m1", "+", "1"}], 
+        SuperscriptBox["r1", "2"]},
+       "Hypergeometric1F1Regularized"]}], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["r1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"m1", "+", "u1", "+", "1"}], ")"}], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u1"}], 
+        RowBox[{"m1", "+", "2"}], 
+        SuperscriptBox["r1", "2"]},
+       "Hypergeometric1F1Regularized"]}]}], ")"}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.898656449937191*^9, 3.8986564665484743`*^9}, {
+   3.898656535185402*^9, 3.8986565515043097`*^9}, {3.898656613378797*^9, 
+   3.8986566968661222`*^9}, 3.898656854077589*^9, 3.89865745048558*^9, {
+   3.898657490204081*^9, 3.898657527107415*^9}, {3.8986576151351337`*^9, 
+   3.898657650646875*^9}, 3.8986595840395317`*^9, {3.898659637147398*^9, 
+   3.898659655241062*^9}, 3.8986596872591667`*^9, 3.8986597823357887`*^9, {
+   3.898659812471345*^9, 3.898659849894692*^9}},
+ CellLabel->
+  "Out[4019]//TraditionalForm=",ExpressionUUID->"b633e7fd-eef0-48a1-9f38-\
+1d598aad4ed7"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox[
+       SuperscriptBox["r1", "2"], "2"]}]], " ", 
+    SuperscriptBox["r1", "m1"], " ", 
+    TemplateBox[{
+      RowBox[{"m1", "+", "1"}]},
+     "Gamma"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        TemplateBox[{
+          RowBox[{"-", "u1"}], 
+          RowBox[{"m1", "+", "1"}], 
+          SuperscriptBox["r1", "2"]},
+         "Hypergeometric1F1Regularized"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["m1", "2"], " ", "r"}], "+", 
+          RowBox[{"m1", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"2", " ", "r", " ", 
+               SuperscriptBox["r1", "2"]}]}], "-", "r", "+", "r1"}], ")"}]}], 
+          "+", 
+          RowBox[{
+           SuperscriptBox["r1", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"r", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                SuperscriptBox["r1", "2"], "-", 
+                RowBox[{"4", " ", "u1"}], "-", "3"}], ")"}]}], "+", "r1"}], 
+            ")"}]}]}], ")"}]}], 
+       SuperscriptBox["r1", "2"]], "+", 
+      RowBox[{"2", " ", 
+       RowBox[{"(", 
+        RowBox[{"m1", "+", "u1", "+", "1"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"r", "-", "r1"}], ")"}], " ", 
+       TemplateBox[{
+         RowBox[{"-", "u1"}], 
+         RowBox[{"m1", "+", "2"}], 
+         SuperscriptBox["r1", "2"]},
+        "Hypergeometric1F1Regularized"]}]}], ")"}]}], "r"], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.898656449937191*^9, 3.8986564665484743`*^9}, {
+   3.898656535185402*^9, 3.8986565515043097`*^9}, {3.898656613378797*^9, 
+   3.8986566968661222`*^9}, 3.898656854077589*^9, 3.89865745048558*^9, {
+   3.898657490204081*^9, 3.898657527107415*^9}, {3.8986576151351337`*^9, 
+   3.898657650646875*^9}, 3.8986595840395317`*^9, {3.898659637147398*^9, 
+   3.898659655241062*^9}, 3.8986596872591667`*^9, 3.8986597823357887`*^9, {
+   3.898659812471345*^9, 3.898659849906818*^9}},
+ CellLabel->
+  "Out[4021]//TraditionalForm=",ExpressionUUID->"1c46e17d-031a-46e9-a84c-\
+4078e55f0ed7"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["1", "r"], 
+   SuperscriptBox["r1", 
+    RowBox[{"2", " ", "m1"}]], " ", 
+   TemplateBox[{
+     RowBox[{"m1", "+", "1"}]},
+    "Gamma"], " ", 
+   TemplateBox[{
+     RowBox[{"m1", "+", "u1", "+", "1"}], 
+     RowBox[{"m1", "+", "1"}], 
+     RowBox[{"-", 
+       SuperscriptBox["r1", "2"]}]},
+    "Hypergeometric1F1"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       TemplateBox[{
+         RowBox[{"-", "u1"}], 
+         RowBox[{"m1", "+", "1"}], 
+         SuperscriptBox["r1", "2"]},
+        "Hypergeometric1F1Regularized"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["m1", "2"], " ", "r"}], "+", 
+         RowBox[{"m1", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"2", " ", "r", " ", 
+              SuperscriptBox["r1", "2"]}]}], "-", "r", "+", "r1"}], ")"}]}], 
+         "+", 
+         RowBox[{
+          SuperscriptBox["r1", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"r", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               SuperscriptBox["r1", "2"], "-", 
+               RowBox[{"4", " ", "u1"}], "-", "3"}], ")"}]}], "+", "r1"}], 
+           ")"}]}]}], ")"}]}], 
+      SuperscriptBox["r1", "2"]], "+", 
+     RowBox[{"2", " ", 
+      RowBox[{"(", 
+       RowBox[{"m1", "+", "u1", "+", "1"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"r", "-", "r1"}], ")"}], " ", 
+      TemplateBox[{
+        RowBox[{"-", "u1"}], 
+        RowBox[{"m1", "+", "2"}], 
+        SuperscriptBox["r1", "2"]},
+       "Hypergeometric1F1Regularized"]}]}], ")"}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.898656449937191*^9, 3.8986564665484743`*^9}, {
+   3.898656535185402*^9, 3.8986565515043097`*^9}, {3.898656613378797*^9, 
+   3.8986566968661222`*^9}, 3.898656854077589*^9, 3.89865745048558*^9, {
+   3.898657490204081*^9, 3.898657527107415*^9}, {3.8986576151351337`*^9, 
+   3.898657650646875*^9}, 3.8986595840395317`*^9, {3.898659637147398*^9, 
+   3.898659655241062*^9}, 3.8986596872591667`*^9, 3.8986597823357887`*^9, {
+   3.898659812471345*^9, 3.8986598499163923`*^9}},
+ CellLabel->
+  "Out[4023]//TraditionalForm=",ExpressionUUID->"6cfa1522-5af2-4778-9df0-\
+3469f1f28039"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["1", 
+    SuperscriptBox["L", "2"]], 
+   SuperscriptBox["hypNorm", "2"], " ", 
+   SuperscriptBox["r1", 
+    RowBox[{"2", " ", "m1"}]], " ", 
+   TemplateBox[{
+     RowBox[{"-", "u1"}], 
+     RowBox[{"m1", "+", "1"}], 
+     SuperscriptBox["r1", "2"]},
+    "Hypergeometric1F1"], " ", 
+   TemplateBox[{
+     RowBox[{"m1", "+", "u1", "+", "1"}], 
+     RowBox[{"m1", "+", "1"}], 
+     RowBox[{"-", 
+       SuperscriptBox["r1", "2"]}]},
+    "Hypergeometric1F1"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["L", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"2", " ", "m1"}]}], "+", 
+        SuperscriptBox["r1", "2"], "-", 
+        RowBox[{"4", " ", "u1"}], "-", "2"}], ")"}]}], "-", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["\[Pi]", "2"], " ", 
+      SuperscriptBox["n1", "2"]}]}], ")"}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.898656449937191*^9, 3.8986564665484743`*^9}, {
+   3.898656535185402*^9, 3.8986565515043097`*^9}, {3.898656613378797*^9, 
+   3.8986566968661222`*^9}, 3.898656854077589*^9, 3.89865745048558*^9, {
+   3.898657490204081*^9, 3.898657527107415*^9}, {3.8986576151351337`*^9, 
+   3.898657650646875*^9}, 3.8986595840395317`*^9, {3.898659637147398*^9, 
+   3.898659655241062*^9}, 3.8986596872591667`*^9, 3.8986597823357887`*^9, {
+   3.898659812471345*^9, 3.898659849926495*^9}},
+ CellLabel->
+  "Out[4024]//TraditionalForm=",ExpressionUUID->"55975d01-5d93-43e0-bbdb-\
+2542b71f5aed"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["r1", 
+    RowBox[{
+     RowBox[{"2", " ", "m1"}], "-", "2"}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"m1", "-", 
+        SuperscriptBox["r1", "2"]}], ")"}], "2"], "-", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["r1", "2"], " ", "u1"}], "-", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["r1", "2"]}]}], ")"}], " ", 
+   TemplateBox[{
+     RowBox[{"-", "u1"}], 
+     RowBox[{"m1", "+", "1"}], 
+     SuperscriptBox["r1", "2"]},
+    "Hypergeometric1F1"], " ", 
+   TemplateBox[{
+     RowBox[{"m1", "+", "u1", "+", "1"}], 
+     RowBox[{"m1", "+", "1"}], 
+     RowBox[{"-", 
+       SuperscriptBox["r1", "2"]}]},
+    "Hypergeometric1F1"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.898656449937191*^9, 3.8986564665484743`*^9}, {
+   3.898656535185402*^9, 3.8986565515043097`*^9}, {3.898656613378797*^9, 
+   3.8986566968661222`*^9}, 3.898656854077589*^9, 3.89865745048558*^9, {
+   3.898657490204081*^9, 3.898657527107415*^9}, {3.8986576151351337`*^9, 
+   3.898657650646875*^9}, 3.8986595840395317`*^9, {3.898659637147398*^9, 
+   3.898659655241062*^9}, 3.8986596872591667`*^9, 3.8986597823357887`*^9, {
+   3.898659812471345*^9, 3.898659849935066*^9}},
+ CellLabel->
+  "Out[4025]//TraditionalForm=",ExpressionUUID->"d67c3438-e751-45e3-9e08-\
+d17474bba035"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"ca\[LSlash]ka", " ", "f", "*", 
+   RowBox[{"r", "^", "2"}], " ", "mo\:017ce", " ", "by\[CAcute]", " ", 
+   "r\[OAcute]wna", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{
+     RowBox[{"2", " ", "!!"}], "!"}]}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"albo", " ", "inn\:0105", " ", "ca\[LSlash]kowit\:0105"}], ",", 
+     " ", 
+     RowBox[{"warto", " ", "sprawdzi\[CAcute]"}]}], ")"}]}], "*)"}]], "Input",\
+
+ CellChangeTimes->{{3.898660565352549*^9, 
+  3.898660600769038*^9}},ExpressionUUID->"e250e880-4e52-4c1c-b9f5-\
+ff54da3884c8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R11", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"r1", "^", "m1"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h1"}], " ", 
+      RowBox[{
+       RowBox[{"r1", "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u1"}], ",", 
+      RowBox[{"m1", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{"r1", "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Cos", "[", 
+    RowBox[{"m1", " ", "phi1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        OverscriptBox["\[CapitalPhi]", "_"], "11"], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\bar{\\Phi}_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Cos", "[", " ", 
+    RowBox[{"m1", " ", "phi1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"tempNorm", " ", "=", " ", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox[
+          OverscriptBox["\[CapitalPhi]", "_"], "11"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\bar{\\Phi}_{11}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", "R11", "  ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "R11"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"phi1", ",", "0", ",", 
+      RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+    RowBox[{"MinRecursion", "->", "10"}], ",", 
+    RowBox[{"MaxRecursion", "->", "20"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tempNorm", " ", "=", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            OverscriptBox["\[CapitalPhi]", "_"], "11"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\bar{\\Phi}_{11}", "state" -> "Boxes"|>,
+        
+        "TeXAssistantTemplate"], " ", "R11", "  ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "R11"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"phi1", ",", "0", ",", 
+        RowBox[{"2", " ", "Pi"}]}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox[
+             OverscriptBox["\[CapitalPhi]", "_"], "11"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\bar{\\Phi}_{11}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", "R11", " ", 
+        RowBox[{"Laplacian", "[", 
+         RowBox[{
+          RowBox[{
+           TemplateBox[<|"boxes" -> FormBox[
+               SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+             "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+            "TeXAssistantTemplate"], "  ", "R11"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"r1", ",", "phi1", ",", "z1"}], "}"}], ",", 
+          "\"\<Cylindrical\>\""}], " ", "]"}], " ", "tempNorm"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"phi1", ",", "0", ",", 
+         RowBox[{"2", " ", "Pi"}]}], "}"}]}], "]"}]}], " ", "+", " ", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox[
+            OverscriptBox["\[CapitalPhi]", "_"], "11"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\bar{\\Phi}_{11}", "state" -> "Boxes"|>,
+        
+        "TeXAssistantTemplate"], " ", "R11", " ", 
+       RowBox[{"r1", "^", "2"}], " ", 
+       TemplateBox[<|"boxes" -> FormBox[
+           SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+         "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+        "TeXAssistantTemplate"], "  ", "R11", " ", "tempNorm"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"phi1", ",", "0", ",", 
+        RowBox[{"2", " ", "Pi"}]}], "}"}]}], "]"}]}], ")"}], "/", 
+  "2"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "n1", ",", "m1", ",", " ", "u1", ",", " ", "h1", ",", " ", "L", ",", " ", 
+    TemplateBox[<|
+     "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, "input" -> 
+      "\\sigma", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], ",", "r1", ",", "n2", ",", "m2", ",", " ", "u2",
+     ",", " ", "h2", ",", " ", "r2", ",", "hypNorm"}], "]"}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.8986650311999407`*^9, 3.898665140769305*^9}, {
+   3.89868491601301*^9, 3.898685012915319*^9}, {3.898685078810902*^9, 
+   3.898685127375371*^9}, {3.8991591009052267`*^9, 3.899159122875951*^9}, {
+   3.899159166251287*^9, 3.899159190504476*^9}, {3.899159251337525*^9, 
+   3.899159334512334*^9}, {3.8991593848975353`*^9, 3.8991594363692617`*^9}, {
+   3.899159511649405*^9, 3.899159549331787*^9}, {3.8991595838792667`*^9, 
+   3.899159647087392*^9}, {3.89915971574684*^9, 3.899159715921612*^9}, 
+   3.899159830533821*^9, {3.899159891216119*^9, 3.899160058603918*^9}, {
+   3.899160090865574*^9, 3.899160223729653*^9}, {3.899160256428392*^9, 
+   3.899160364123695*^9}, {3.899160394690311*^9, 3.899160607601178*^9}, {
+   3.899160755124064*^9, 3.899160788780322*^9}, {3.8994731548308487`*^9, 
+   3.899473185645598*^9}, {3.899473599442462*^9, 3.899473615987064*^9}, {
+   3.8994738495202503`*^9, 
+   3.8994738937599173`*^9}},ExpressionUUID->"5c5ecb1b-2964-4112-984f-\
+9f22495b50fe"],
+
+Cell[BoxData["5.568327996831701`"], "Output",
+ CellChangeTimes->{{3.8986651333647327`*^9, 3.8986651418703012`*^9}, {
+   3.898684952667123*^9, 3.8986850137367373`*^9}, {3.89868510515482*^9, 
+   3.898685128113381*^9}, {3.899159282957341*^9, 3.8991593348395348`*^9}, {
+   3.899159396602497*^9, 3.899159436875395*^9}, {3.899159507039275*^9, 
+   3.899159550530871*^9}, {3.899159586905264*^9, 3.899159647474992*^9}, 
+   3.899159721467082*^9, 3.8991599048220673`*^9, {3.8991599477682133`*^9, 
+   3.899160059338807*^9}, {3.899160130539097*^9, 3.899160193728127*^9}, {
+   3.899160271171925*^9, 3.899160364822525*^9}, 3.899160395544756*^9, {
+   3.899160435314951*^9, 3.899160608833177*^9}, {3.899160759227247*^9, 
+   3.899160789640285*^9}, 3.899276992449847*^9, 3.899453235484799*^9, 
+   3.899463461632217*^9, {3.899473155882037*^9, 3.899473186537711*^9}, {
+   3.899473605310966*^9, 3.899473616900963*^9}, {3.8994738613414383`*^9, 
+   3.899473878440365*^9}},
+ CellLabel->
+  "Out[226]=",ExpressionUUID->"37716363-620a-4f37-a5e6-fe2006988e77"],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.8986651333647327`*^9, 3.8986651418703012`*^9}, {
+   3.898684952667123*^9, 3.8986850137367373`*^9}, {3.89868510515482*^9, 
+   3.898685128113381*^9}, {3.899159282957341*^9, 3.8991593348395348`*^9}, {
+   3.899159396602497*^9, 3.899159436875395*^9}, {3.899159507039275*^9, 
+   3.899159550530871*^9}, {3.899159586905264*^9, 3.899159647474992*^9}, 
+   3.899159721467082*^9, 3.8991599048220673`*^9, {3.8991599477682133`*^9, 
+   3.899160059338807*^9}, {3.899160130539097*^9, 3.899160193728127*^9}, {
+   3.899160271171925*^9, 3.899160364822525*^9}, 3.899160395544756*^9, {
+   3.899160435314951*^9, 3.899160608833177*^9}, {3.899160759227247*^9, 
+   3.899160789640285*^9}, 3.899276992449847*^9, 3.899453235484799*^9, 
+   3.899463461632217*^9, {3.899473155882037*^9, 3.899473186537711*^9}, {
+   3.899473605310966*^9, 3.899473616900963*^9}, {3.8994738613414383`*^9, 
+   3.899473878772439*^9}},
+ CellLabel->
+  "Out[228]=",ExpressionUUID->"6d984284-fa32-48d0-b484-8d83654f197e"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+   "Po", " ", "raz", " ", "pierwszy", " ", "eksperyment", " ", "uwa\:017cam", 
+    " ", "za", " ", "w", " ", "pe\[LSlash]ni", " ", "udany"}], ",", " ", 
+   RowBox[{
+   "ten", " ", "komentarz", " ", "s\[LSlash]u\:017cy", " ", "tylko", " ", "i",
+     " ", "wy\[LSlash]\:0105cznie", " ", "celebrowaniu"}]}], "*)"}]], "Input",\
+
+ CellChangeTimes->{{3.898665326644856*^9, 
+  3.898665353667136*^9}},ExpressionUUID->"3c468c82-ec9a-434f-94e1-\
+69a7d525f382"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Laplacian", "[", 
+  RowBox[{
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], "  ", "R11"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r1", ",", "phi1", ",", "z1"}], "}"}], ",", 
+   "\"\<Cylindrical\>\""}], " ", "]"}]], "Input",
+ CellChangeTimes->{{3.899277056917523*^9, 3.8992770901992207`*^9}, 
+   3.899278585822196*^9, {3.899278625782736*^9, 3.899278671118321*^9}, {
+   3.899278705216817*^9, 3.899278707543181*^9}, {3.899280742693101*^9, 
+   3.899280807110755*^9}, 3.8994533776064463`*^9},
+ CellLabel->"In[15]:=",ExpressionUUID->"421f4b0a-3737-46ad-9d3a-5386cb3e1b02"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "2"}], " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox[
+      SuperscriptBox["r1", "2"], "2"]}]]}], "+", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", 
+     FractionBox[
+      SuperscriptBox["r1", "2"], "2"]}]], " ", 
+   SuperscriptBox["r1", "2"]}]}]], "Output",
+ CellChangeTimes->{{3.899277083664794*^9, 3.899277092417687*^9}, 
+   3.8992785864325857`*^9, {3.899278626298421*^9, 3.899278671766539*^9}, 
+   3.8992787086993933`*^9, {3.899280763510264*^9, 3.8992808076471233`*^9}, 
+   3.899453384819462*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"10f8f63f-6764-4c58-a4da-c1b051c56d7a"]
+}, Open  ]],
+
+Cell[BoxData["  "], "Input",
+ CellChangeTimes->{{3.899278680893756*^9, 
+  3.8992786834214487`*^9}},ExpressionUUID->"f0756c5a-2aac-4991-afe9-\
+14cd33a7e5fc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"-", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox[
+          OverscriptBox["\[CapitalPhi]", "_"], "11"], TraditionalForm], 
+       "errors" -> {}, "input" -> "\\bar{\\Phi}_{11}", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], " ", "R11", " ", 
+     RowBox[{"Laplacian", "[", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "  ", "R11"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r1", ",", "phi1", ",", "z1"}], "}"}], ",", 
+       "\"\<Cylindrical\>\""}], " ", "]"}]}], " ", ",", 
+    RowBox[{"{", 
+     RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"phi1", ",", "0", ",", 
+      RowBox[{"2", " ", "Pi"}]}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"R11", " ", 
+    RowBox[{"r1", "^", "2"}], "  ", "R11"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"phi1", ",", "0", ",", 
+     RowBox[{"2", " ", "Pi"}]}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.899463465657991*^9, 3.899463531811475*^9}, {
+  3.8994636050397243`*^9, 3.899463605309586*^9}, {3.899464099678447*^9, 
+  3.899464111045895*^9}, {3.899464218140424*^9, 3.899464228260593*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"29e11922-cffd-490c-abad-198c4aa61695"],
+
+Cell[BoxData["8.352491974922623`"], "Output",
+ CellChangeTimes->{
+  3.899463466108781*^9, {3.899463518314884*^9, 3.899463532246318*^9}, 
+   3.899463605744945*^9, {3.8994641028900948`*^9, 3.899464111392723*^9}, {
+   3.8994642206873207`*^9, 3.899464228653288*^9}},
+ CellLabel->"Out[39]=",ExpressionUUID->"038a1eb6-6440-493b-ac44-17503a1237fb"],
+
+Cell[BoxData["2.784163996520604`"], "Output",
+ CellChangeTimes->{
+  3.899463466108781*^9, {3.899463518314884*^9, 3.899463532246318*^9}, 
+   3.899463605744945*^9, {3.8994641028900948`*^9, 3.899464111392723*^9}, {
+   3.8994642206873207`*^9, 3.899464228655088*^9}},
+ CellLabel->"Out[40]=",ExpressionUUID->"25411358-ef6a-4e48-b958-f2efce8e05fd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Cos", "[", 
+     RowBox[{"2", " ", "Pi", "  ", "a", " ", "x"}], "]"}], " ", 
+    RowBox[{"Cos", " ", "[", 
+     RowBox[{"2", " ", "Pi", " ", "b", " ", "x"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.899466716162792*^9, 3.899466867493956*^9}},
+ CellLabel->"In[73]:=",ExpressionUUID->"4927138f-cab8-4b08-848a-5ac0ba381754"],
+
+Cell[BoxData[
+ FractionBox["1", "2"]], "Output",
+ CellChangeTimes->{
+  3.899466789677059*^9, {3.8994668248289013`*^9, 3.899466867747498*^9}},
+ CellLabel->"Out[75]=",ExpressionUUID->"648c134c-0340-437f-b985-965f6c584dc5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"L", ",", "Constant"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"D", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", " ", 
+       RowBox[{"Pi", "/", "L"}], " ", "x"}], "]"}], "\[IndentingNewLine]", 
+     ",", "x"}], "]"}], ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.899466934212965*^9, 3.899466951732945*^9}, {
+  3.899466991470456*^9, 3.899467081126389*^9}, {3.89946716454323*^9, 
+  3.899467213911572*^9}},
+ CellLabel->"In[85]:=",ExpressionUUID->"9a2a32d3-ad4e-431b-8428-ac01f0ab0242"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"4", " ", 
+    SuperscriptBox["\[Pi]", "2"], " ", 
+    RowBox[{"Sin", "[", 
+     FractionBox[
+      RowBox[{"2", " ", "\[Pi]", " ", "x"}], "L"], "]"}]}], 
+   SuperscriptBox["L", "2"]]}]], "Output",
+ CellChangeTimes->{
+  3.89946695208527*^9, 3.8994670816242647`*^9, {3.89946719007908*^9, 
+   3.899467214940391*^9}},
+ CellLabel->"Out[86]=",ExpressionUUID->"f1ee22d8-097e-4ad9-874a-6db5ae536d7e"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "phi1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "phi2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\rho_1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "r1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\rho_2", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "=", "r2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"normzphi", " ", "=", " ", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"1", "/", 
+     RowBox[{"(", " ", 
+      RowBox[{"2", "Pi", " ", "L"}], " ", ")"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z11", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n1", " ", 
+     RowBox[{"z1", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m1", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R11", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m1"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h1"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u1"}], ",", 
+      RowBox[{"m1", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z21", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n2", " ", 
+     RowBox[{"z1", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m2", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R21", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m2"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h2"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u2"}], ",", 
+      RowBox[{"m2", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h2"}]}], "]"}]}]}], " ", 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.899773917951355*^9, 3.8997739747810907`*^9}, {
+   3.89977415270347*^9, 3.899774155470607*^9}, {3.899774248876534*^9, 
+   3.899774349531674*^9}, {3.899774392102764*^9, 3.899774397244796*^9}, 
+   3.8997744365802317`*^9, {3.8997815657827187`*^9, 3.899781604891659*^9}, {
+   3.899784050714531*^9, 3.89978405319979*^9}},
+ CellLabel->
+  "In[220]:=",ExpressionUUID->"4ee2f3d2-1fe6-4f53-9e69-a199a25fc878"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"tempNorm1", " ", "=", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"Z11", " ", 
+          TemplateBox[<|"boxes" -> FormBox[
+              SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+            "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], "R11"}], "]"}], " ", "Z11", "  ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "R11"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"phi1", ",", "0", ",", 
+         RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"z1", ",", "0", ",", "L"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"tempNorm2", " ", "=", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"Z21", "  ", 
+          TemplateBox[<|"boxes" -> FormBox[
+              SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], 
+            "errors" -> {}, "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], "R21"}], "]"}], " ", "Z21", "  ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "R21"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"phi1", ",", "0", ",", 
+         RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"z1", ",", "0", ",", "L"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"2", " ", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"Z11", " ", 
+          TemplateBox[<|"boxes" -> FormBox[
+              SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+            "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], " ", "R11"}], "]"}], " ", 
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"Z21", " ", 
+          TemplateBox[<|"boxes" -> FormBox[
+              SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], 
+            "errors" -> {}, "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+           "TeXAssistantTemplate"], " ", "R21"}], "]"}], " ", "Z11", " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", "R11", " ", "Z21", " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], 
+          "errors" -> {}, "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", "R21"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z1", ",", "0", ",", "L"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"phi1", ",", "0", ",", 
+         RowBox[{"2", " ", "Pi"}]}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"r1", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"%", "/", "tempNorm1"}], "/", "tempNorm2"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.899773979990205*^9, 3.899774053612434*^9}, {
+  3.899774129181122*^9, 3.899774195487608*^9}, {3.899774355003037*^9, 
+  3.899774420690192*^9}, {3.899779280712379*^9, 3.8997792860763493`*^9}, {
+  3.899779319460495*^9, 3.899779337139127*^9}, {3.8997815223540173`*^9, 
+  3.8997815458491383`*^9}, {3.899785310113123*^9, 3.8997853269950447`*^9}, {
+  3.899785385306213*^9, 3.899785389749748*^9}},
+ CellLabel->
+  "In[277]:=",ExpressionUUID->"d5b942e7-b782-4520-9086-103157803f82"],
+
+Cell[BoxData[
+ FractionBox[
+  SqrtBox["2"], 
+  RowBox[{"L", " ", 
+   SuperscriptBox["\[Pi]", 
+    RowBox[{"3", "/", "2"}]]}]]], "Output",
+ CellChangeTimes->{{3.899774421680162*^9, 3.899774444081553*^9}, 
+   3.899779287199443*^9, {3.899779320567646*^9, 3.8997793384233*^9}, 
+   3.899781554301832*^9, {3.899781589735949*^9, 3.899781597158347*^9}, 
+   3.899784075342854*^9, {3.8997853127829027`*^9, 3.899785328011887*^9}, {
+   3.899785386977051*^9, 3.899785391737883*^9}},
+ CellLabel->
+  "Out[280]=",ExpressionUUID->"1680b426-8229-4303-ac01-2e24aad73fb4"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Z11", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n1", " ", 
+     RowBox[{"z1", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m1", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R11", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m1"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h1"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u1"}], ",", 
+      RowBox[{"m1", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z22", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n2", " ", 
+     RowBox[{"z2", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "22"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m2", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R22", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m2"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h2"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u2"}], ",", 
+      RowBox[{"m2", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h2"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z12", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n1", " ", 
+     RowBox[{"z2", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "12"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{12}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m1", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R12", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_2", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m1"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h1"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u1"}], ",", 
+      RowBox[{"m1", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "2"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_2", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h1"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Z21", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "2", " ", "Pi", " ", "n2", " ", 
+     RowBox[{"z1", "/", "L"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "m2", " ", 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[CurlyPhi]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\varphi_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R21", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+       "input" -> "\\rho_1", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "^", "m2"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "h2"}], " ", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], "/", "2"}]}], "]"}], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"-", "u2"}], ",", 
+      RowBox[{"m2", "+", "1"}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Rho]", "1"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\rho_1", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], "^", "2"}], " ", "h2"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z11", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "11"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{11}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R11", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "12"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{12}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], "  ", "=", " ", 
+   RowBox[{"Z12", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "12"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{12}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R12", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "21"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{21}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z21", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "21"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{21}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R21", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox["\[Psi]", "22"], TraditionalForm], "errors" -> {}, 
+     "input" -> "\\psi_{22}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"Z22", " ", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubscriptBox["\[CapitalPhi]", "22"], TraditionalForm], "errors" -> {},
+       "input" -> "\\Phi_{22}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], " ", "R22", " ", "normzphi"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   TemplateBox[<|
+    "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+     "input" -> "\\Psi", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], " ", "=", " ", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "11"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{11}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], " ", 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "22"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{22}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}], "+", 
+       RowBox[{
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "12"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{12}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"], 
+        TemplateBox[<|"boxes" -> FormBox[
+            SubscriptBox["\[Psi]", "21"], TraditionalForm], "errors" -> {}, 
+          "input" -> "\\psi_{21}", "state" -> "Boxes"|>,
+         "TeXAssistantTemplate"]}]}], ")"}], "/", 
+     RowBox[{"Sqrt", "[", "2", "]"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.899777177441922*^9, 3.899777177643704*^9}},
+ CellLabel->
+  "In[243]:=",ExpressionUUID->"81de5632-8fd3-4b87-8198-c6daac21c330"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Conjugate", "[", 
+     TemplateBox[<|
+      "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+       "input" -> "\\Psi", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], "]"}], " ", 
+    RowBox[{"DiracDelta", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"phi2", "-", "phi1"}], ")"}], ",", 
+      RowBox[{"(", 
+       RowBox[{"rho2", "-", "rho1"}], ")"}], ",", 
+      RowBox[{"(", 
+       RowBox[{"z2", "-", "z1"}], ")"}]}], "]"}], 
+    TemplateBox[<|
+     "boxes" -> FormBox["\[CapitalPsi]", TraditionalForm], "errors" -> {}, 
+      "input" -> "\\Psi", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"phi1", ",", "0", ",", 
+     RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"phi2", ",", "0", ",", 
+     RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"rho1", ",", "0", ",", "Infinity"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"rho2", ",", "0", ",", "Infinity"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z1", ",", "0", ",", "L"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z2", ",", "0", ",", "L"}], "}"}]}], " ", "]"}]], "Input",
+ CellChangeTimes->{{3.899777202592002*^9, 3.899777318104694*^9}, {
+  3.899777384781217*^9, 3.899777413991275*^9}},
+ CellLabel->
+  "In[260]:=",ExpressionUUID->"105e51a6-6dc3-41c6-97cc-13b7e2e87644"],
+
+Cell[BoxData[
+ RowBox[{
+  SubsuperscriptBox["\[Integral]", "0", 
+   RowBox[{"2", " ", "\[Pi]"}]], 
+  RowBox[{
+   SubsuperscriptBox["\[Integral]", "0", 
+    RowBox[{"2", " ", "\[Pi]"}]], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", "L"], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "L"], 
+       RowBox[{
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{"8", " ", "L", " ", 
+           SuperscriptBox["\[Pi]", "2"], " ", 
+           RowBox[{"Conjugate", "[", "L", "]"}]}]], 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox[
+              SuperscriptBox["r1", "2"], "2"]}], "-", 
+            FractionBox[
+             SuperscriptBox["r2", "2"], "2"], "-", 
+            FractionBox[
+             SuperscriptBox[
+              RowBox[{"Conjugate", "[", "r1", "]"}], "2"], "2"], "-", 
+            FractionBox[
+             SuperscriptBox[
+              RowBox[{"Conjugate", "[", "r2", "]"}], "2"], "2"]}]], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", "z1"}], 
+              "L"]], "+", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", "z2"}], 
+              "L"]]}], ")"}], " ", 
+          RowBox[{"Conjugate", "[", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", "z1"}], 
+              "L"]], "+", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", "z2"}], 
+              "L"]]}], "]"}], " ", 
+          RowBox[{"DiracDelta", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "phi1"}], "+", "phi2"}], ",", 
+            RowBox[{
+             RowBox[{"-", "rho1"}], "+", "rho2"}], ",", 
+            RowBox[{
+             RowBox[{"-", "z1"}], "+", "z2"}]}], "]"}]}]}], 
+        RowBox[{"\[DifferentialD]", "z2"}], 
+        RowBox[{"\[DifferentialD]", "z1"}], 
+        RowBox[{"\[DifferentialD]", "rho2"}], 
+        RowBox[{"\[DifferentialD]", "rho1"}], 
+        RowBox[{"\[DifferentialD]", "phi2"}], 
+        RowBox[{"\[DifferentialD]", "phi1"}]}]}]}]}]}]}]}]], "Output",
+ CellChangeTimes->{{3.899777318887319*^9, 3.899777347162518*^9}, 
+   3.899777396185244*^9, 3.89977743784662*^9, 3.899784115491145*^9},
+ CellLabel->
+  "Out[260]=",ExpressionUUID->"ba766ae3-52ca-44b2-98f3-1815df355b2c"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", 
+    RowBox[{
+    "n1", ",", "m1", ",", " ", "u1", ",", " ", "h1", ",", " ", "L", ",", " ", 
+     
+     TemplateBox[<|
+      "boxes" -> FormBox["\[Sigma]", TraditionalForm], "errors" -> {}, 
+       "input" -> "\\sigma", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], ",", "r1", ",", "n2", ",", "m2", ",", " ", 
+     "u2", ",", " ", "h2", ",", " ", "r2", ",", "hypNorm"}], "]"}], 
+   ";"}]}]], "Input",
+ CellLabel->"In[57]:=",ExpressionUUID->"4b5a0011-16ce-4fed-b30a-3edc590e7f12"]
+}, Open  ]]
+},
+WindowSize->{1920., 1016.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2587d062-6325-43ab-9e2e-857ef155ca3f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2678, 59, 195, "Input",ExpressionUUID->"7d3b71bf-e558-4a2a-a7a2-f63dbcdfc454"],
+Cell[CellGroupData[{
+Cell[3261, 83, 473, 10, 173, "Section",ExpressionUUID->"21160062-439b-4c50-92ca-7dbfafc5a4a9"],
+Cell[3737, 95, 9160, 221, 939, "Input",ExpressionUUID->"6ff1e494-76a2-406b-8fcc-039834d84f5b"],
+Cell[12900, 318, 8052, 190, 439, "Input",ExpressionUUID->"662e7716-346e-4cb9-91f9-dbc95d063854"],
+Cell[CellGroupData[{
+Cell[20977, 512, 1550, 33, 134, "Input",ExpressionUUID->"58964899-6b45-44ec-90f7-a41c55c58172"],
+Cell[22530, 547, 5820, 164, 400, "Output",ExpressionUUID->"9b66a32b-7a32-4101-8963-5b8f882ee307"]
+}, Open  ]],
+Cell[28365, 714, 229, 5, 42, "Input",ExpressionUUID->"b82827e8-cbb0-435b-9bc5-430e8bbdaac9"],
+Cell[CellGroupData[{
+Cell[28619, 723, 10206, 236, 1337, "Input",ExpressionUUID->"65a147a5-dd78-4867-96aa-a6ac082ed484"],
+Cell[38828, 961, 876, 22, 98, "Output",ExpressionUUID->"52005755-2187-4d32-92bb-a4a5f9a994af"],
+Cell[39707, 985, 5234, 144, 254, "Output",ExpressionUUID->"48757109-3754-48e7-bb7f-f2794e829ee4"],
+Cell[44944, 1131, 4292, 63, 184, "Message",ExpressionUUID->"b4c9db41-0e46-4d3b-aa08-3bc380dc86c2"],
+Cell[49239, 1196, 4294, 63, 184, "Message",ExpressionUUID->"3665b612-7551-4c5b-9a73-6856ba504ccb"],
+Cell[53536, 1261, 4294, 63, 184, "Message",ExpressionUUID->"eaaf09af-ed86-45a2-9d0b-64027431e047"],
+Cell[57833, 1326, 729, 14, 41, "Message",ExpressionUUID->"e0bff3ab-3ce7-41ef-8b29-11f71bb5c00c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58599, 1345, 12882, 312, 1154, "Input",ExpressionUUID->"37c7eee8-10fe-4117-8202-51d59230b493"],
+Cell[71484, 1659, 1805, 44, 79, "Output",ExpressionUUID->"64d3b354-2c96-4601-a512-be950fb20d3b"],
+Cell[73292, 1705, 1633, 27, 71, "Message",ExpressionUUID->"7a29bb7d-8d54-431f-8102-5e17f8b1dd5e"],
+Cell[74928, 1734, 1633, 27, 71, "Message",ExpressionUUID->"9e486da3-d7a5-4dcc-8ee4-200075b01cfb"],
+Cell[76564, 1763, 803, 15, 74, "Message",ExpressionUUID->"585d0637-4360-427d-9208-51b97936d0d8"],
+Cell[77370, 1780, 712, 12, 51, "Output",ExpressionUUID->"7f022d69-299f-4bd6-bffa-cfb8fa3ab634"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78119, 1797, 5733, 148, 951, "Input",ExpressionUUID->"fce31b6e-b9ec-4c43-9735-200721a39884"],
+Cell[83855, 1947, 1282, 33, 89, "Output",ExpressionUUID->"b9d24157-027d-4718-8c75-45c1bc3024c2"],
+Cell[85140, 1982, 1901, 53, 89, "Output",ExpressionUUID->"b633e7fd-eef0-48a1-9f38-1d598aad4ed7"],
+Cell[87044, 2037, 2260, 63, 123, "Output",ExpressionUUID->"1c46e17d-031a-46e9-a84c-4078e55f0ed7"],
+Cell[89307, 2102, 2301, 66, 166, "Output",ExpressionUUID->"6cfa1522-5af2-4778-9df0-3469f1f28039"],
+Cell[91611, 2170, 1529, 41, 93, "Output",ExpressionUUID->"55975d01-5d93-43e0-bbdb-2542b71f5aed"],
+Cell[93143, 2213, 1364, 36, 77, "Output",ExpressionUUID->"d67c3438-e751-45e3-9e08-d17474bba035"]
+}, Open  ]],
+Cell[94522, 2252, 577, 16, 49, "Input",ExpressionUUID->"e250e880-4e52-4c1c-b9f5-ff54da3884c8"],
+Cell[CellGroupData[{
+Cell[95124, 2272, 6625, 155, 629, "Input",ExpressionUUID->"5c5ecb1b-2964-4112-984f-9f22495b50fe"],
+Cell[101752, 2429, 1031, 15, 51, "Output",ExpressionUUID->"37716363-620a-4f37-a5e6-fe2006988e77"],
+Cell[102786, 2446, 1014, 15, 51, "Output",ExpressionUUID->"6d984284-fa32-48d0-b484-8d83654f197e"]
+}, Open  ]],
+Cell[103815, 2464, 503, 12, 46, "Input",ExpressionUUID->"3c468c82-ec9a-434f-94e1-69a7d525f382"],
+Cell[CellGroupData[{
+Cell[104343, 2480, 753, 15, 72, "Input",ExpressionUUID->"421f4b0a-3737-46ad-9d3a-5386cb3e1b02"],
+Cell[105099, 2497, 686, 18, 63, "Output",ExpressionUUID->"10f8f63f-6764-4c58-a4da-c1b051c56d7a"]
+}, Open  ]],
+Cell[105800, 2518, 156, 3, 46, "Input",ExpressionUUID->"f0756c5a-2aac-4991-afe9-14cd33a7e5fc"],
+Cell[CellGroupData[{
+Cell[105981, 2525, 1601, 37, 134, "Input",ExpressionUUID->"29e11922-cffd-490c-abad-198c4aa61695"],
+Cell[107585, 2564, 341, 5, 51, "Output",ExpressionUUID->"038a1eb6-6440-493b-ac44-17503a1237fb"],
+Cell[107929, 2571, 341, 5, 51, "Output",ExpressionUUID->"25411358-ef6a-4e48-b958-f2efce8e05fd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108307, 2581, 615, 15, 135, "Input",ExpressionUUID->"4927138f-cab8-4b08-848a-5ac0ba381754"],
+Cell[108925, 2598, 220, 4, 67, "Output",ExpressionUUID->"648c134c-0340-437f-b985-965f6c584dc5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109182, 2607, 623, 14, 228, "Input",ExpressionUUID->"9a2a32d3-ad4e-431b-8428-ac01f0ab0242"],
+Cell[109808, 2623, 448, 12, 86, "Output",ExpressionUUID->"f1ee22d8-097e-4ad9-874a-6db5ae536d7e"]
+}, Open  ]],
+Cell[110271, 2638, 5808, 144, 825, "Input",ExpressionUUID->"4ee2f3d2-1fe6-4f53-9e69-a199a25fc878"],
+Cell[CellGroupData[{
+Cell[116104, 2786, 4193, 92, 354, "Input",ExpressionUUID->"d5b942e7-b782-4520-9086-103157803f82"],
+Cell[120300, 2880, 552, 12, 84, "Output",ExpressionUUID->"1680b426-8229-4303-ac01-2e24aad73fb4"]
+}, Open  ]],
+Cell[120867, 2895, 10689, 260, 939, "Input",ExpressionUUID->"81de5632-8fd3-4b87-8198-c6daac21c330"],
+Cell[CellGroupData[{
+Cell[131581, 3159, 1437, 38, 134, "Input",ExpressionUUID->"105e51a6-6dc3-41c6-97cc-13b7e2e87644"],
+Cell[133021, 3199, 2824, 72, 121, "Output",ExpressionUUID->"ba766ae3-52ca-44b2-98f3-1815df355b2c"]
+}, Open  ]],
+Cell[135860, 3274, 569, 13, 104, "Input",ExpressionUUID->"4b5a0011-16ce-4fed-b30a-3edc590e7f12"]
+}, Open  ]]
+}
+]
+*)
+

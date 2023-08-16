@@ -1,0 +1,722 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28247,        714]
+NotebookOptionsPosition[     27348,        691]
+NotebookOutlinePosition[     27744,        707]
+CellTagsIndexPosition[     27701,        704]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"psi", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox[
+          StyleBox["Z", "TI"], "1", 
+          StyleBox["a", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+       "Z_1^a", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         RowBox[{
+           SubsuperscriptBox["\[CapitalPsi]", "1", 
+            StyleBox["a", "TI"]], 
+           SubsuperscriptBox[
+            StyleBox["R", "TI"], "1", 
+            StyleBox["a", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\Psi_1^aR_1^a", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox[
+          StyleBox["Z", "TI"], "2", 
+          StyleBox["b", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+       "Z_2^b", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         RowBox[{
+           SubsuperscriptBox["\[CapitalPsi]", "2", 
+            StyleBox["b", "TI"]], 
+           SubsuperscriptBox[
+            StyleBox["R", "TI"], "2", 
+            StyleBox["b", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\Psi_2^bR_2^b", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "+", 
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox[
+          StyleBox["Z", "TI"], "1", 
+          StyleBox["b", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+       "Z_1^b", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         RowBox[{
+           SubsuperscriptBox["\[CapitalPsi]", "1", 
+            StyleBox["b", "TI"]], 
+           SubsuperscriptBox[
+            StyleBox["R", "TI"], "1", 
+            StyleBox["b", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\Psi_1^bR_1^b", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox[
+          StyleBox["Z", "TI"], "2", 
+          StyleBox["a", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+       "Z_2^a", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         RowBox[{
+           SubsuperscriptBox["\[CapitalPsi]", "2", 
+            StyleBox["a", "TI"]], 
+           SubsuperscriptBox[
+            StyleBox["R", "TI"], "2", 
+            StyleBox["a", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\Psi_2^aR_2^a", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"laplacian", " ", "=", " ", 
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        SubsuperscriptBox["\[CapitalDelta]", 
+         StyleBox["z", "TI"], 
+         StyleBox["a", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+      "\\Delta_z^a", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], "+", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubsuperscriptBox["\[CapitalDelta]", 
+         RowBox[{"\[Psi]", 
+           StyleBox["r", "TI"]}], 
+         StyleBox["a", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+      "\\Delta_{\\psi r}^a", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], "+", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubsuperscriptBox["\[CapitalDelta]", 
+         StyleBox["z", "TI"], 
+         StyleBox["b", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+      "\\Delta_z^b", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], "+", 
+    TemplateBox[<|"boxes" -> FormBox[
+        SubsuperscriptBox["\[CapitalDelta]", 
+         RowBox[{"\[Psi]", 
+           StyleBox["r", "TI"]}], 
+         StyleBox["b", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+      "\\Delta_{\\psi r}^b", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"psiconj", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox[
+          OverscriptBox[
+           StyleBox["Z", "TI"], "_"], "1", 
+          StyleBox["a", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\bar Z_1^a", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         RowBox[{
+           SubsuperscriptBox[
+            OverscriptBox["\[CapitalPsi]", "_"], "1", 
+            StyleBox["a", "TI"]], 
+           SubsuperscriptBox[
+            OverscriptBox[
+             StyleBox["R", "TI"], "_"], "1", 
+            StyleBox["a", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\bar\\Psi_1^a\\bar R_1^a", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox[
+          OverscriptBox[
+           StyleBox["Z", "TI"], "_"], "2", 
+          StyleBox["b", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\bar Z_2^b", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         RowBox[{
+           SubsuperscriptBox[
+            OverscriptBox["\[CapitalPsi]", "_"], "2", 
+            StyleBox["b", "TI"]], 
+           SubsuperscriptBox[
+            OverscriptBox[
+             StyleBox["R", "TI"], "_"], "2", 
+            StyleBox["b", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\bar\\Psi_2^b\\bar R_2^b", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}], "+", 
+    RowBox[{
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox[
+          OverscriptBox[
+           StyleBox["Z", "TI"], "_"], "1", 
+          StyleBox["b", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\bar Z_1^b", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         RowBox[{
+           SubsuperscriptBox[
+            OverscriptBox["\[CapitalPsi]", "_"], "1", 
+            StyleBox["b", "TI"]], 
+           SubsuperscriptBox[
+            OverscriptBox[
+             StyleBox["R", "TI"], "_"], "1", 
+            StyleBox["b", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\bar\\Psi_1^b\\bar R_1^b", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         SubsuperscriptBox[
+          OverscriptBox[
+           StyleBox["Z", "TI"], "_"], "2", 
+          StyleBox["a", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\bar Z_2^a", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"], 
+     TemplateBox[<|"boxes" -> FormBox[
+         RowBox[{
+           SubsuperscriptBox[
+            OverscriptBox["\[CapitalPsi]", "_"], "2", 
+            StyleBox["a", "TI"]], 
+           SubsuperscriptBox[
+            OverscriptBox[
+             StyleBox["R", "TI"], "_"], "2", 
+            StyleBox["a", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+       "\\bar\\Psi_2^a\\bar R_2^a", "state" -> "Boxes"|>,
+      "TeXAssistantTemplate"]}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.901008391830565*^9, 3.9010085726374493`*^9}, {
+  3.90100864078575*^9, 3.901008642652269*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"dfe8f50c-8308-408a-887c-4af9d80eaead"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{"psiconj", " ", "laplacian", " ", "psi"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9010086456642923`*^9, 3.901008664855134*^9}, {
+  3.901008733501916*^9, 3.901008744933186*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"b994ca39-4805-4ae1-b1cd-defd07a1f544"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubsuperscriptBox["R", "1", "b"], " ", 
+   SubsuperscriptBox["R", "2", "a"], " ", 
+   SubsuperscriptBox["Z", "1", "b"], " ", 
+   SubsuperscriptBox["Z", "2", "a"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", "z", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "a"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "b"], " ", 
+   SubsuperscriptBox["R", "2", "a"], " ", 
+   SubsuperscriptBox["Z", "1", "b"], " ", 
+   SubsuperscriptBox["Z", "2", "a"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", "z", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "a"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "b"], " ", 
+   SubsuperscriptBox["R", "2", "a"], " ", 
+   SubsuperscriptBox["Z", "1", "b"], " ", 
+   SubsuperscriptBox["Z", "2", "a"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", 
+    RowBox[{"r", " ", "\[Psi]"}], "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "a"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "b"], " ", 
+   SubsuperscriptBox["R", "2", "a"], " ", 
+   SubsuperscriptBox["Z", "1", "b"], " ", 
+   SubsuperscriptBox["Z", "2", "a"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", 
+    RowBox[{"r", " ", "\[Psi]"}], "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "a"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "a"], " ", 
+   SubsuperscriptBox["R", "2", "b"], " ", 
+   SubsuperscriptBox["Z", "1", "a"], " ", 
+   SubsuperscriptBox["Z", "2", "b"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", "z", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "a"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "a"], " ", 
+   SubsuperscriptBox["R", "2", "b"], " ", 
+   SubsuperscriptBox["Z", "1", "a"], " ", 
+   SubsuperscriptBox["Z", "2", "b"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", "z", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "a"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "a"], " ", 
+   SubsuperscriptBox["R", "2", "b"], " ", 
+   SubsuperscriptBox["Z", "1", "a"], " ", 
+   SubsuperscriptBox["Z", "2", "b"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", 
+    RowBox[{"r", " ", "\[Psi]"}], "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "a"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "a"], " ", 
+   SubsuperscriptBox["R", "2", "b"], " ", 
+   SubsuperscriptBox["Z", "1", "a"], " ", 
+   SubsuperscriptBox["Z", "2", "b"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", 
+    RowBox[{"r", " ", "\[Psi]"}], "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "a"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "b"], " ", 
+   SubsuperscriptBox["R", "2", "a"], " ", 
+   SubsuperscriptBox["Z", "1", "b"], " ", 
+   SubsuperscriptBox["Z", "2", "a"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", "z", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "b"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "b"], " ", 
+   SubsuperscriptBox["R", "2", "a"], " ", 
+   SubsuperscriptBox["Z", "1", "b"], " ", 
+   SubsuperscriptBox["Z", "2", "a"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", "z", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "b"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "b"], " ", 
+   SubsuperscriptBox["R", "2", "a"], " ", 
+   SubsuperscriptBox["Z", "1", "b"], " ", 
+   SubsuperscriptBox["Z", "2", "a"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", 
+    RowBox[{"r", " ", "\[Psi]"}], "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "b"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "b"], " ", 
+   SubsuperscriptBox["R", "2", "a"], " ", 
+   SubsuperscriptBox["Z", "1", "b"], " ", 
+   SubsuperscriptBox["Z", "2", "a"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", 
+    RowBox[{"r", " ", "\[Psi]"}], "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "b"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "a"], " ", 
+   SubsuperscriptBox["R", "2", "b"], " ", 
+   SubsuperscriptBox["Z", "1", "a"], " ", 
+   SubsuperscriptBox["Z", "2", "b"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", "z", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "b"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "a"], " ", 
+   SubsuperscriptBox["R", "2", "b"], " ", 
+   SubsuperscriptBox["Z", "1", "a"], " ", 
+   SubsuperscriptBox["Z", "2", "b"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", "z", "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "b"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "a"], " ", 
+   SubsuperscriptBox["R", "2", "b"], " ", 
+   SubsuperscriptBox["Z", "1", "a"], " ", 
+   SubsuperscriptBox["Z", "2", "b"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", 
+    RowBox[{"r", " ", "\[Psi]"}], "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "b"]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["R", "1", "a"], " ", 
+   SubsuperscriptBox["R", "2", "b"], " ", 
+   SubsuperscriptBox["Z", "1", "a"], " ", 
+   SubsuperscriptBox["Z", "2", "b"], " ", 
+   SubsuperscriptBox["\[CapitalDelta]", 
+    RowBox[{"r", " ", "\[Psi]"}], "b"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "1", "a"], " ", 
+   SubsuperscriptBox["\[CapitalPsi]", "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["R", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["Z", "_"], "2", "b"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "1", "a"], " ", 
+   SubsuperscriptBox[
+    OverscriptBox["\[CapitalPsi]", "_"], "2", "b"]}]}]], "Output",
+ CellChangeTimes->{{3.901008657196004*^9, 3.901008665261739*^9}, {
+   3.901008737135399*^9, 3.901008745743718*^9}, 3.9010088711792192`*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"88279430-393c-4c5e-bf9f-f421483075d6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"matrix", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "255.975", ",", "129.987", ",", "67.077", ",", "39.7802", ",", 
+         "236.393", ",", "146.039", ",", "90.6487", ",", "55.1781"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "129.987", ",", "194.481", ",", "164.567", ",", "126.647", ",", 
+         "79.9092", ",", "135.576", ",", "147.351", ",", "131.626"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "67.077", ",", "164.567", ",", "191.19", ",", "177.871", ",", 
+         "64.2025", ",", "96.4885", ",", "124.985", ",", "139.194"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "39.7802", ",", "126.647", ",", "177.871", ",", "191.338", ",", 
+         "72.0481", ",", "110.151", ",", "120.462", ",", "125.42"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "236.393", ",", "79.9092", ",", "64.2025", ",", "72.0481", ",", 
+         "275.848", ",", "111.606", ",", "50.9092", ",", "40.7793"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "146.039", ",", "135.576", ",", "96.4885", ",", "110.151", ",", 
+         "111.606", ",", "173.456", ",", "127.72", ",", "79.1918"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "90.6487", ",", "147.351", ",", "124.985", ",", "120.462", ",", 
+         "50.9092", ",", "127.72", ",", "162.38", ",", "137.917"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "55.1781", ",", "131.626", ",", "139.194", ",", "125.42", ",", 
+         "40.7793", ",", "79.1918", ",", "137.917", ",", "159.129"}], "}"}]}],
+       "}"}]}], ";"}], "\n", 
+   RowBox[{"Eigenvalues", "[", "matrix", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Eigenvectors", "[", "matrix", "]"}], "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "0", ",", "7"}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"Eigenvectors", "[", "matrix", "]"}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.90116510904547*^9, 3.9011651351247053`*^9}, {
+  3.9011661929390306`*^9, 3.901166342677387*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"fb7eade4-4084-4fa6-ac85-92eb71c8878e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "987.7415304193366`", ",", "382.8851013397081`", ",", "115.96797851777657`",
+    ",", "68.21168599812847`", ",", "50.67713242682159`", ",", 
+   RowBox[{"-", "8.603337539246459`"}], ",", "6.696361220033314`", ",", 
+   "0.22054761744146503`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9011651379652147`*^9, 3.9011662124970293`*^9, {3.9011662449596987`*^9, 
+   3.901166343002763*^9}},
+ CellLabel->"Out[41]=",ExpressionUUID->"250ea64d-477a-45d0-9ec5-7ca5ebd44b22"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.3676583650135584`"}], ",", 
+     RowBox[{"-", "0.5491376847072656`"}], ",", "0.22118608033420276`", ",", 
+     RowBox[{"-", "0.1876417634295075`"}], ",", "0.13428161491194507`", ",", 
+     RowBox[{"-", "0.4868702948974206`"}], ",", 
+     RowBox[{"-", "0.00803107576965309`"}], ",", "0.47329027247396266`"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.4008617392920147`"}], ",", "0.13746865983477585`", ",", 
+     "0.2831730706617622`", ",", 
+     RowBox[{"-", "0.20131245856003754`"}], ",", "0.5694412278439984`", ",", 
+     RowBox[{"-", "0.07967462196725641`"}], ",", "0.017659875271109682`", ",", 
+     RowBox[{"-", "0.6072687305195418`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.36839916531438066`"}], ",", "0.3059540775218238`", ",", 
+     RowBox[{"-", "0.3394875696487987`"}], ",", 
+     RowBox[{"-", "0.1273528507442543`"}], ",", "0.40784130201779684`", ",", 
+     "0.44537332875553576`", ",", 
+     RowBox[{"-", "0.07808844811929036`"}], ",", "0.5180867336427979`"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.34420035677974864`"}], ",", "0.3034282819696633`", ",", 
+     RowBox[{"-", "0.5152997123396501`"}], ",", "0.3959506342694802`", ",", 
+     RowBox[{"-", "0.09884578017493015`"}], ",", 
+     RowBox[{"-", "0.5860271847920548`"}], ",", 
+     RowBox[{"-", "0.07209128069445861`"}], ",", 
+     RowBox[{"-", "0.09354780303161911`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.3328313678104901`"}], ",", 
+     RowBox[{"-", "0.6021336008194963`"}], ",", 
+     RowBox[{"-", "0.4721842207216486`"}], ",", 
+     RowBox[{"-", "0.08209007942483297`"}], ",", 
+     RowBox[{"-", "0.21060119858515935`"}], ",", "0.34592251235432375`", ",", 
+     
+     RowBox[{"-", "0.08372924635260896`"}], ",", 
+     RowBox[{"-", "0.3548744169889557`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.3527086357845549`"}], ",", 
+     RowBox[{"-", "0.08221400392004183`"}], ",", "0.34577480010485345`", ",", 
+     "0.7007141705460753`", ",", 
+     RowBox[{"-", "0.05954737461597684`"}], ",", "0.283298032446144`", ",", 
+     "0.4130480636300779`", ",", "0.06216547860943178`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.34481526276946817`"}], ",", "0.2003674352099148`", ",", 
+     "0.3825564552594293`", ",", 
+     RowBox[{"-", "0.010561653847964592`"}], ",", 
+     RowBox[{"-", "0.4306902485793387`"}], ",", "0.11952569825466634`", ",", 
+     RowBox[{"-", "0.7032018137357076`"}], ",", "0.014868149520792988`"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.30962508845589065`"}], ",", "0.29052095651994964`", ",", 
+     "0.035164389491133735`", ",", 
+     RowBox[{"-", "0.5034059304362953`"}], ",", 
+     RowBox[{"-", "0.49820404971026006`"}], ",", 
+     RowBox[{"-", "0.024848641695998992`"}], ",", "0.5623313896102755`", ",", 
+     "0.0058729423491525965`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9011651379652147`*^9, 3.9011662124970293`*^9, {3.9011662449596987`*^9, 
+   3.901166343006781*^9}},
+ CellLabel->"Out[43]=",ExpressionUUID->"6bed9272-94f5-4fbd-af39-c982399b33d9"]
+}, Open  ]]
+},
+WindowSize->{1440., 836.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"1f8ec4a7-c52c-432a-8499-b2fd35b5df47"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 7174, 174, 122, "Input",ExpressionUUID->"dfe8f50c-8308-408a-887c-4af9d80eaead"],
+Cell[CellGroupData[{
+Cell[7757, 198, 304, 5, 72, "Input",ExpressionUUID->"b994ca39-4805-4ae1-b1cd-defd07a1f544"],
+Cell[8064, 205, 13033, 332, 257, "Output",ExpressionUUID->"88279430-393c-4c5e-bf9f-f421483075d6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21134, 542, 2449, 62, 507, "Input",ExpressionUUID->"fb7eade4-4084-4fa6-ac85-92eb71c8878e"],
+Cell[23586, 606, 504, 10, 51, "Output",ExpressionUUID->"250ea64d-477a-45d0-9ec5-7ca5ebd44b22"],
+Cell[24093, 618, 3239, 70, 318, "Output",ExpressionUUID->"6bed9272-94f5-4fbd-af39-c982399b33d9"]
+}, Open  ]]
+}
+]
+*)
+
